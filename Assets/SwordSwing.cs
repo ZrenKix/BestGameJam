@@ -13,4 +13,16 @@ public class SwordSwing : MonoBehaviour
     {
         animator.SetTrigger("Swing");
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            Health enemy = other.GetComponent<Health>();
+            if (enemy != null)
+            {
+                enemy.TakeDamage();
+            }
+        }
+    }
 }
