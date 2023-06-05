@@ -14,15 +14,17 @@ public class PlayerControll : MonoBehaviour
     private bool ärPåMark = false;
     private bool isCarrying = false;
     private GameObject carriedObject;
-    
+    private SwordSwing swordSwing;
 
     private int defaultLayer;
+   
 
     private Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        swordSwing = GetComponentInChildren<SwordSwing>();
     }
 
     void Update()
@@ -53,7 +55,9 @@ public class PlayerControll : MonoBehaviour
         if (ärPåMark && Input.GetButtonDown("Jump"))
         {
             AttackSword();
+            
         }
+       
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -86,7 +90,11 @@ public class PlayerControll : MonoBehaviour
 
     void AttackSword()
     {
-        GetComponent<SwordSwing>().PlaySwingAnimation();
+        if(swordSwing != null)
+        {
+            swordSwing.PlaySwingAnimation();
+        }
+
     }
 
     void FixedUpdate()
@@ -95,7 +103,7 @@ public class PlayerControll : MonoBehaviour
         if (Physics.Raycast(transform.position, Vector3.down, out hit, groundRaycastAvstånd))
         {
             ärPåMark = true;
-            Debug.Log("Jag står på marken");
+            //Debug.Log("Jag står på marken");
         }
         else
         {
