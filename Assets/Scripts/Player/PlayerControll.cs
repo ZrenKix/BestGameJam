@@ -36,7 +36,7 @@ public class PlayerControll : MonoBehaviour
 
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
 
-        
+
         if (ärPåMark && Input.GetButtonDown("Jump"))
         {
             rb.AddForce(new Vector3(0f, jumpForce, 0f), ForceMode.Impulse);
@@ -44,7 +44,6 @@ public class PlayerControll : MonoBehaviour
             Debug.Log("Hopp");
         }
 
-        // Sprinting
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             springer = true;
@@ -57,7 +56,6 @@ public class PlayerControll : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Ground check using raycast
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, groundRaycastAvstånd))
         {
@@ -73,7 +71,6 @@ public class PlayerControll : MonoBehaviour
 
     void OnDrawGizmos()
     {
-        // Draw the ground raycast visualization
         Gizmos.color = Color.yellow;
         Gizmos.DrawLine(transform.position, transform.position + Vector3.down * groundRaycastAvstånd);
     }
