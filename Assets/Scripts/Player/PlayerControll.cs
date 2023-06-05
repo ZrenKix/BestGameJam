@@ -107,7 +107,7 @@ public class PlayerControll : MonoBehaviour
                 carriedObject = hit.collider.gameObject;
                 carriedObject.GetComponent<Rigidbody>().isKinematic = true;
                 carriedObject.transform.SetParent(transform);
-                carriedObject.transform.localPosition = new Vector3(0f, 0.5f, 1f);
+                carriedObject.transform.localPosition = new Vector3(0f, 0.5f, 0.5f);
                 isCarrying = true;
             }
         }
@@ -115,7 +115,8 @@ public class PlayerControll : MonoBehaviour
 
     void CarryObject()
     {
-        carriedObject.transform.position = transform.position + transform.forward * 1.5f;
+        Vector3 desiredPosition = transform.position + transform.forward * 1.5f + Vector3.up * 0.5f;
+        carriedObject.transform.position = desiredPosition;
         carriedObject.GetComponent<Rigidbody>().velocity = rb.velocity;
     }
 
