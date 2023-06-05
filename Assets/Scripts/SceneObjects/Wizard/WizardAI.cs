@@ -22,7 +22,7 @@ public class WizardAI : MonoBehaviour
     private void Update()
     {
         // Walk towards player
-        agent.SetDestination(playerPosition.position);
+        //agent.SetDestination(playerPosition.position);
 
         if (timer > cooldown)
         {
