@@ -5,37 +5,44 @@ public class SwordSwing : MonoBehaviour
     private Animator animator;
     private bool attack = false;
     private float swingCoolDown = 1f;
+    private float lastSwingTime;
+    private Transform rightArm;
 
     void Start()
     {
         animator = GetComponent<Animator>();
-        
+        lastSwingTime = -swingCoolDown;
+
+        // Find the right arm bone
+        rightArm = transform.parent.parent;
     }
 
     public void PlaySwingAnimation()
     {
-        //animator.SetTrigger("Swing");
-        float timer = Time.deltaTime;
-        attack = true;
-        transform.Rotate(0f, 0f, 90f);
-        if(timer > swingCoolDown)
+        float currentTime = Time.time;
+        if (currentTime - lastSwingTime > swingCoolDown)
         {
-            transform.Rotate(0f, 0f, -90f);
+            //animator.SetTrigger("Swing");
+            transform.localRotation = Quaternion.Euler(0f, 90f, 90f);
+            attack = true;
+            lastSwingTime = currentTime;
+            Debug.Log("Playing animation: Swing");
         }
-        Debug.Log("Spela animation");
-
-        
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+        }
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") && attack == true)
+        if (other.CompareTag("Enemy") && attack)
         {
             Health enemy = other.GetComponent<Health>();
             if (enemy != null)
             {
                 enemy.takeDamage();
-                Debug.Log("Skadar enemy");
+                Debug.Log("Damaging enemy");
             }
         }
     }

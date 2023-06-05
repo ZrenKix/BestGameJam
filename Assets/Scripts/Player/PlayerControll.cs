@@ -15,6 +15,8 @@ public class PlayerControll : MonoBehaviour
     private bool isCarrying = false;
     private GameObject carriedObject;
     private SwordSwing swordSwing;
+    private Animator animator;
+    public ParticleSystem dust;
 
     private int defaultLayer;
    
@@ -25,6 +27,7 @@ public class PlayerControll : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         swordSwing = GetComponentInChildren<SwordSwing>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -38,21 +41,28 @@ public class PlayerControll : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(movement);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
-        }
 
-        if (springer)
-        {
-            movement *= sprintSpeed;
+            if (springer)
+            {
+                movement *= sprintSpeed;
+            }
+            else
+            {
+                movement *= walkSpeed;
+            }
+
+            animator.SetBool("Running", true); // Enable the "Run" animation state
         }
         else
         {
-            movement *= walkSpeed;
+            movement = Vector3.zero;
+            animator.SetBool("Running", false); // Disable the "Run" animation state
         }
 
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
 
 
-        if (ärPåMark && Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             AttackSword();
             
@@ -85,6 +95,10 @@ public class PlayerControll : MonoBehaviour
         {
             CarryObject();
             Debug.Log("jag bär på något");
+        }
+        if (movement.magnitude > 0.1f)
+        {
+            CreateDust();
         }
     }
 
@@ -158,6 +172,11 @@ public class PlayerControll : MonoBehaviour
         carriedObject.layer = defaultLayer;
         carriedObject = null;
         isCarrying = false;
+    }
+
+    void CreateDust()
+    {
+        dust.Play();
     }
 
     void OnDrawGizmos()
