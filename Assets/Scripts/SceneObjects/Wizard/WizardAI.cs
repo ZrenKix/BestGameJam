@@ -4,8 +4,6 @@ using UnityEngine.AI;
 
 public class WizardAI : MonoBehaviour
 {
-    private int health = 50;
-
     public GameObject fireball;
 
     private NavMeshAgent agent;
@@ -37,18 +35,8 @@ public class WizardAI : MonoBehaviour
             }
         }
 
-        if (health < 0)
-        {
-            Destroy(this);
-        }
-
         timer += Time.deltaTime;
     }
-
-    public void TakeDamage()
-    {
-        health--;
-    } 
 
     private void ShootFireBall()
     {
