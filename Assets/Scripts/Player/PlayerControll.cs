@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerControll : MonoBehaviour
@@ -13,12 +14,17 @@ public class PlayerControll : MonoBehaviour
     private bool ärPåMark = false;
     private bool isCarrying = false;
     private GameObject carriedObject;
+    private SwordSwing swordSwing;
+
+    private int defaultLayer;
+   
 
     private Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        swordSwing = GetComponentInChildren<SwordSwing>();
     }
 
     void Update()
@@ -48,10 +54,10 @@ public class PlayerControll : MonoBehaviour
 
         if (ärPåMark && Input.GetButtonDown("Jump"))
         {
-            rb.AddForce(new Vector3(0f, jumpForce, 0f), ForceMode.Impulse);
-            ärPåMark = false;
-            Debug.Log("Hopp");
+            AttackSword();
+            
         }
+       
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -82,13 +88,22 @@ public class PlayerControll : MonoBehaviour
         }
     }
 
+    void AttackSword()
+    {
+        if(swordSwing != null)
+        {
+            swordSwing.PlaySwingAnimation();
+        }
+
+    }
+
     void FixedUpdate()
     {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.down, out hit, groundRaycastAvstånd))
         {
             ärPåMark = true;
-            Debug.Log("Jag står på marken");
+            //Debug.Log("Jag står på marken");
         }
         else
         {
@@ -105,6 +120,16 @@ public class PlayerControll : MonoBehaviour
             if (hit.collider.CompareTag("PickUp"))
             {
                 carriedObject = hit.collider.gameObject;
+                defaultLayer = carriedObject.layer;
+
+               
+                int carriedObjectLayer = LayerMask.NameToLayer("CarriedObject");
+                carriedObject.layer = carriedObjectLayer;
+
+               
+                int playerLayer = LayerMask.NameToLayer("Player");
+                Physics.IgnoreLayerCollision(playerLayer, carriedObjectLayer, true);
+
                 carriedObject.GetComponent<Rigidbody>().isKinematic = true;
                 carriedObject.transform.SetParent(transform);
                 carriedObject.transform.localPosition = new Vector3(0f, 0.5f, 0.5f);
@@ -115,15 +140,22 @@ public class PlayerControll : MonoBehaviour
 
     void CarryObject()
     {
-        Vector3 desiredPosition = transform.position + transform.forward * 1.5f + Vector3.up * 0.5f;
+        Vector3 desiredPosition = transform.position + transform.forward * 1f + Vector3.up * 0.5f;
         carriedObject.transform.position = desiredPosition;
         carriedObject.GetComponent<Rigidbody>().velocity = rb.velocity;
     }
 
     void DropObject()
     {
+        
+        int playerLayer = LayerMask.NameToLayer("Player");
+        int carriedObjectLayer = LayerMask.NameToLayer("CarriedObject");
+        Physics.IgnoreLayerCollision(playerLayer, carriedObjectLayer, false);
+
         carriedObject.transform.SetParent(null);
         carriedObject.GetComponent<Rigidbody>().isKinematic = false;
+        carriedObject.layer = defaultLayer;
+        carriedObject.layer = defaultLayer;
         carriedObject = null;
         isCarrying = false;
     }
