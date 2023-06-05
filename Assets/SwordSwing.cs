@@ -21,7 +21,7 @@ public class SwordSwing : MonoBehaviour
             Health enemy = other.GetComponent<Health>();
             if (enemy != null)
             {
-                enemy.TakeDamage();
+                enemy.takeDamage();
             }
         }
     }
