@@ -9,6 +9,8 @@ public class PlayerControll : MonoBehaviour
     public float groundRaycastAvstånd = 0.1f;
     public float pickupRaycastDistance = 2f;
 
+    private float throwForce = 10f;
+
     private bool springer = false;
     private bool hoppar = false;
     private bool ärPåMark = false;
@@ -161,7 +163,6 @@ public class PlayerControll : MonoBehaviour
 
     void DropObject()
     {
-        
         int playerLayer = LayerMask.NameToLayer("Player");
         int carriedObjectLayer = LayerMask.NameToLayer("CarriedObject");
         Physics.IgnoreLayerCollision(playerLayer, carriedObjectLayer, false);
@@ -170,6 +171,10 @@ public class PlayerControll : MonoBehaviour
         carriedObject.GetComponent<Rigidbody>().isKinematic = false;
         carriedObject.layer = defaultLayer;
         carriedObject.layer = defaultLayer;
+
+        Rigidbody carriedObjectRb = carriedObject.GetComponent<Rigidbody>();
+        carriedObjectRb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
+
         carriedObject = null;
         isCarrying = false;
     }
