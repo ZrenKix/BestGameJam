@@ -57,6 +57,6 @@ public class WizardAI : MonoBehaviour
 
     private void ShootFireBall()
     {
-        Instantiate(fireball, transform.position + transform.forward * 0.5f, transform.rotation);
+        Instantiate(fireball, transform.position + transform.forward + transform.up * 0.5f, transform.rotation);
     }
 }
