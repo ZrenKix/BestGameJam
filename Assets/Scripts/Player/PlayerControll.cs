@@ -9,12 +9,16 @@ public class PlayerControll : MonoBehaviour
     public float groundRaycastAvstånd = 0.1f;
     public float pickupRaycastDistance = 2f;
 
+    private float throwForce = 4f;
+
     private bool springer = false;
     private bool hoppar = false;
     private bool ärPåMark = false;
     private bool isCarrying = false;
     private GameObject carriedObject;
     private SwordSwing swordSwing;
+    private Animator animator;
+    public ParticleSystem dust;
 
     private int defaultLayer;
    
@@ -25,6 +29,7 @@ public class PlayerControll : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         swordSwing = GetComponentInChildren<SwordSwing>();
+        animator = GetComponent<Animator>();
     }
 
     void Update()
@@ -38,21 +43,28 @@ public class PlayerControll : MonoBehaviour
         {
             Quaternion targetRotation = Quaternion.LookRotation(movement);
             transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
-        }
 
-        if (springer)
-        {
-            movement *= sprintSpeed;
+            if (springer)
+            {
+                movement *= sprintSpeed;
+            }
+            else
+            {
+                movement *= walkSpeed;
+            }
+
+            animator.SetBool("Running", true); // Enable the "Run" animation state
         }
         else
         {
-            movement *= walkSpeed;
+            movement = Vector3.zero;
+            animator.SetBool("Running", false); // Disable the "Run" animation state
         }
 
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
 
 
-        if (ärPåMark && Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
         {
             AttackSword();
             
@@ -85,6 +97,10 @@ public class PlayerControll : MonoBehaviour
         {
             CarryObject();
             Debug.Log("jag bär på något");
+        }
+        if (movement.magnitude > 0.1f)
+        {
+            CreateDust();
         }
     }
 
@@ -129,35 +145,49 @@ public class PlayerControll : MonoBehaviour
                
                 int playerLayer = LayerMask.NameToLayer("Player");
                 Physics.IgnoreLayerCollision(playerLayer, carriedObjectLayer, true);
-
+                Debug.Log(hit + "kolliderar med pickup");
                 carriedObject.GetComponent<Rigidbody>().isKinematic = true;
                 carriedObject.transform.SetParent(transform);
                 carriedObject.transform.localPosition = new Vector3(0f, 0.5f, 0.5f);
                 isCarrying = true;
+                animator.SetBool("Grabbing", true);
             }
         }
     }
 
     void CarryObject()
     {
-        Vector3 desiredPosition = transform.position + transform.forward * 1f + Vector3.up * 0.5f;
+        Vector3 desiredPosition = transform.position + transform.forward * 0.5f + Vector3.up * 0.5f;
         carriedObject.transform.position = desiredPosition;
         carriedObject.GetComponent<Rigidbody>().velocity = rb.velocity;
+
     }
 
     void DropObject()
     {
-        
         int playerLayer = LayerMask.NameToLayer("Player");
         int carriedObjectLayer = LayerMask.NameToLayer("CarriedObject");
         Physics.IgnoreLayerCollision(playerLayer, carriedObjectLayer, false);
-
+        
         carriedObject.transform.SetParent(null);
         carriedObject.GetComponent<Rigidbody>().isKinematic = false;
         carriedObject.layer = defaultLayer;
         carriedObject.layer = defaultLayer;
+
+        Rigidbody carriedObjectRb = carriedObject.GetComponent<Rigidbody>();
+
+        Vector3 throwDirection = transform.forward + Vector3.up; 
+
+        carriedObjectRb.velocity = throwDirection * throwForce;
+        carriedObjectRb.angularVelocity = new Vector3(0f, 2f, 0f); 
         carriedObject = null;
         isCarrying = false;
+        animator.SetBool("Grabbing", false);
+    }
+
+    void CreateDust()
+    {
+        dust.Play();
     }
 
     void OnDrawGizmos()
