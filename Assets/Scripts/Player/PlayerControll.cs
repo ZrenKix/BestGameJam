@@ -21,8 +21,8 @@ public class PlayerControll : MonoBehaviour
     public ParticleSystem dust;
 
     private int defaultLayer;
-   
 
+    private HorseController horseController;
     private Rigidbody rb;
 
     void Start()
@@ -69,7 +69,7 @@ public class PlayerControll : MonoBehaviour
             AttackSword();
             
         }
-       
+        
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -111,6 +111,11 @@ public class PlayerControll : MonoBehaviour
             swordSwing.PlaySwingAnimation();
         }
 
+    }
+
+    public void SetHorseController(HorseController horse)
+    {
+        horseController = horse;
     }
 
     void FixedUpdate()

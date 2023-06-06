@@ -8,16 +8,22 @@ public class ThirdPersonCamera : MonoBehaviour
 
     private void LateUpdate()
     {
-        // Calculate the desired position of the camera based on the target and offset
-        Vector3 desiredPosition = target.position + offset;
+        try
+        {
+            // Calculate the desired position of the camera based on the target and offset
+            Vector3 desiredPosition = target.position + offset;
 
-        // Smoothly move the camera towards the desired position
-        transform.position = Vector3.Lerp(transform.position, desiredPosition, rotationSpeed * Time.deltaTime);
+            // Smoothly move the camera towards the desired position
+            transform.position = Vector3.Lerp(transform.position, desiredPosition, rotationSpeed * Time.deltaTime);
 
-        // Calculate the desired rotation of the camera to look at the target
-        Quaternion desiredRotation = Quaternion.LookRotation(target.position - transform.position);
+            // Calculate the desired rotation of the camera to look at the target
+            Quaternion desiredRotation = Quaternion.LookRotation(target.position - transform.position);
 
-        // Smoothly rotate the camera towards the desired rotation
-        transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
+            // Smoothly rotate the camera towards the desired rotation
+            transform.rotation = Quaternion.Lerp(transform.rotation, desiredRotation, rotationSpeed * Time.deltaTime);
+        } catch
+        {
+            Debug.LogError("MainCamera: No Target");
+        }
     }
 }
