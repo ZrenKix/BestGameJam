@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SUPER Character Controller/Demo Assets/Demo.SkySweptFortress.unity.meta
 guid: fc499d2896219e74bbadd15793f2019c
 DefaultImporter:
+========
+guid: 61482766cf1eef442a1523a22db0a7d2
+NativeFormatImporter:
+>>>>>>>> main:Assets/Animation/Link_Idle.anim.meta
   externalObjects: {}
+  mainObjectFileID: 7400000
   userData: 
   assetBundleName: 
   assetBundleVariant: 
