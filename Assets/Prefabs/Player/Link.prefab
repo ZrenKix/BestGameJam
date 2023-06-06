@@ -5530,9 +5530,10 @@ GameObject:
   - component: {fileID: 4284099347450967474}
   - component: {fileID: 8062249349314061747}
   - component: {fileID: 6232516763959236129}
+  - component: {fileID: 668487732}
   m_Layer: 0
   m_Name: Link
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5642,6 +5643,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   currentHealth: 0
+--- !u!114 &668487732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494174060993789065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6de0983f7dffc349b0693f64e36ef39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
 --- !u!1 &8084268286550884030
 GameObject:
   m_ObjectHideFlags: 0
