@@ -1,4 +1,3 @@
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,7 +6,7 @@ public class WizardAI : MonoBehaviour
     public GameObject fireball;
 
     private NavMeshAgent agent;
-    private Transform playerPosition;
+    private Transform target;
 
     // Projectile timer
     private float timer = 0;
@@ -15,27 +14,33 @@ public class WizardAI : MonoBehaviour
 
     private void Start()
     {
-        playerPosition = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         agent = GetComponent<NavMeshAgent>();
     }
 
     private void Update()
     {
         // Walk towards player
-        //agent.SetDestination(playerPosition.position);
-
-        if (timer > cooldown)
+        if (target != null)
         {
-            timer = 0;
+            agent.SetDestination(target.position);
 
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, 1))
+            if (timer > cooldown)
             {
-                ShootFireBall();
-            }
-        }
+                timer = 0;
 
-        timer += Time.deltaTime;
+                RaycastHit hit;
+                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, 1))
+                {
+                    ShootFireBall();
+                }
+            }
+
+            timer += Time.deltaTime;
+        } else
+        {
+            agent.SetDestination(transform.position);
+        }
     }
 
     private void ShootFireBall()
