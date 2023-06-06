@@ -9,7 +9,7 @@ public class PlayerControll : MonoBehaviour
     public float groundRaycastAvstånd = 0.1f;
     public float pickupRaycastDistance = 2f;
 
-    private float throwForce = 10f;
+    private float throwForce = 4f;
 
     private bool springer = false;
     private bool hoppar = false;
@@ -173,8 +173,11 @@ public class PlayerControll : MonoBehaviour
         carriedObject.layer = defaultLayer;
 
         Rigidbody carriedObjectRb = carriedObject.GetComponent<Rigidbody>();
-        carriedObjectRb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
 
+        Vector3 throwDirection = transform.forward + Vector3.up; 
+
+        carriedObjectRb.velocity = throwDirection * throwForce;
+        carriedObjectRb.angularVelocity = new Vector3(0f, 2f, 0f); 
         carriedObject = null;
         isCarrying = false;
     }
