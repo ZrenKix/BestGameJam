@@ -12,8 +12,7 @@ public class SwordSwing : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         lastSwingTime = -swingCoolDown;
-
-        // Find the right arm bone
+        
         rightArm = transform.parent.parent;
     }
 
