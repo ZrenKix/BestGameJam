@@ -12,6 +12,9 @@ public class WizardAI : MonoBehaviour
     private float timer = 0;
     public float cooldown = 2;
 
+    // Stop script if no target boolean
+    bool stopScript = false;
+
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
@@ -21,26 +24,35 @@ public class WizardAI : MonoBehaviour
     private void Update()
     {
         // Walk towards player
-        if (target != null)
+        if (!stopScript)
         {
-            agent.SetDestination(target.position);
-
-            if (timer > cooldown)
+            try
             {
-                timer = 0;
-
-                RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, 1))
-                {
-                    ShootFireBall();
-                }
+                target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+            }
+            catch
+            {
+                stopScript = true;
+                agent.SetDestination(gameObject.transform.position);
             }
 
-            timer += Time.deltaTime;
-        } else
-        {
-            agent.SetDestination(transform.position);
-        }
+            if (target != null)
+            {
+                agent.SetDestination(target.position);
+
+                if (timer > cooldown)
+                {
+                    timer = 0;
+
+                    RaycastHit hit;
+                    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, 1))
+                    {
+                        ShootFireBall();
+                    }
+                }
+                timer += Time.deltaTime;
+            }
+        } 
     }
 
     private void ShootFireBall()
