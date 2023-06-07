@@ -22,14 +22,15 @@ public class PlayerControll : MonoBehaviour
 
     private int defaultLayer;
 
-    private HorseController horseController;
     private Rigidbody rb;
+    private Transform playerCameraTransform;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         swordSwing = GetComponentInChildren<SwordSwing>();
         animator = GetComponent<Animator>();
+        playerCameraTransform = Camera.main.transform;
     }
 
     void Update()
@@ -37,7 +38,8 @@ public class PlayerControll : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
+        Vector3 cameraForward = Vector3.Scale(playerCameraTransform.forward, new Vector3(1, 0, 1)).normalized;
+        Vector3 movement = (moveHorizontal * playerCameraTransform.right + moveVertical * cameraForward).normalized;
 
         if (movement.magnitude > 0.1f)
         {
@@ -113,10 +115,6 @@ public class PlayerControll : MonoBehaviour
 
     }
 
-    public void SetHorseController(HorseController horse)
-    {
-        horseController = horse;
-    }
 
     void FixedUpdate()
     {
