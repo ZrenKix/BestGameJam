@@ -186,7 +186,7 @@ public class PlayerControll : MonoBehaviour
 
     }
 
-    void DropObject()
+    public void DropObject()
     {
         int playerLayer = LayerMask.NameToLayer("Player");
         int carriedObjectLayer = LayerMask.NameToLayer("CarriedObject");

@@ -9,6 +9,8 @@ public class SpeedPickup : MonoBehaviour
     PlayerControll playerControl;
     [SerializeField] private int walkSpeedIncrease = 1;
     [SerializeField] private int sprintSpeedIncrease = 1;
+    [SerializeField] private GameObject liquid;
+    [SerializeField] private GameObject lid;
 
     void Update()
     { if (!hasPickedUp)
@@ -23,6 +25,8 @@ public class SpeedPickup : MonoBehaviour
                     playerControl.sprintSpeed += sprintSpeedIncrease;
                     playerControl.walkSpeed += walkSpeedIncrease;
                     hasPickedUp = true;
+                    StartCoroutine("RemoveLiquid");
+                    StartCoroutine("DropAfterTime");
                     StartCoroutine("DestroyPotionAfterTime");
 
                 }
@@ -42,5 +46,20 @@ public class SpeedPickup : MonoBehaviour
     {
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
+        
     }
+    IEnumerator RemoveLiquid()
+    {
+        yield return new WaitForSeconds(0.4f);
+        liquid.SetActive(false);
+        lid.SetActive(false);
+
+    }
+    IEnumerator DropAfterTime()
+    {
+        yield return new WaitForSeconds(0.8f);
+        playerControl.DropObject();
+
+    }
+
 }

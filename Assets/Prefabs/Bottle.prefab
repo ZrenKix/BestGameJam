@@ -26,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3690014814886779844}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 3.13}
   m_LocalScale: {x: 0.34, y: 0.34, z: 0.34}
   m_ConstrainProportionsScale: 1
@@ -80,6 +80,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeedIncrease: 5
   sprintSpeedIncrease: 2
+  liquid: {fileID: 3690014814535301323}
+  lid: {fileID: 3690014814646732336}
 --- !u!1 &5672383838721024797
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +249,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7275c084c18b2f34bbd867c9d3c15454, type: 3}
+--- !u!1 &3690014814646732336 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 7275c084c18b2f34bbd867c9d3c15454,
+    type: 3}
+  m_PrefabInstance: {fileID: 4608582361360087905}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4070761760976723082 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7275c084c18b2f34bbd867c9d3c15454,
@@ -337,6 +345,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 34fe54f220b210c48add4088c0d1112d, type: 3}
+--- !u!1 &3690014814535301323 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 34fe54f220b210c48add4088c0d1112d,
+    type: 3}
+  m_PrefabInstance: {fileID: 4608582362186581402}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4070761760150151793 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 34fe54f220b210c48add4088c0d1112d,
