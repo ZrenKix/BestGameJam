@@ -11,7 +11,12 @@ public class LootDrop : MonoBehaviour
     [SerializeField]
     GameObject[] prefabs;
     private int weight = 0;
-
+    AudioSource audioSource;
+    [SerializeField] AudioClip crackSound;
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void Update()
     {
         if(gameObject.GetComponentInParent<PlayerControll>() != null)
@@ -21,6 +26,7 @@ public class LootDrop : MonoBehaviour
         }
         if (uppPlockad && gameObject.GetComponentInParent<PlayerControll>() == null)
         {
+            audioSource.PlayOneShot(crackSound);
             droppadAvParent = true;
             
         }

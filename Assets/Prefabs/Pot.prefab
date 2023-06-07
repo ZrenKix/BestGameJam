@@ -95,9 +95,10 @@ MonoBehaviour:
   uppPlockad: 0
   droppadAvParent: 0
   prefabs:
+  - {fileID: 118664076976929232, guid: 4682954d806909841b408481b16905b5, type: 3}
   - {fileID: 3690014814886779844, guid: b33551b36c0156648b76178dc059b1d9, type: 3}
-  - {fileID: 3690014814886779844, guid: b33551b36c0156648b76178dc059b1d9, type: 3}
-  - {fileID: 222568152791229298, guid: 816a63f915e419746934300e764e620f, type: 3}
+  - {fileID: 3657357432488612922, guid: 3589cbb81134ffd45b29d1fca37976ab, type: 3}
+  crackSound: {fileID: 8300000, guid: 1be85c737a0068c409a60b9ac5a20870, type: 3}
 --- !u!114 &554641122
 MonoBehaviour:
   m_ObjectHideFlags: 0
