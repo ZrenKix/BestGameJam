@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class ChickenAI : MonoBehaviour
@@ -15,8 +12,6 @@ public class ChickenAI : MonoBehaviour
 
     public bool move = false;
 
-    Rigidbody rb;
-
     Quaternion lookDirection;
 
     private void Start()
@@ -24,7 +19,6 @@ public class ChickenAI : MonoBehaviour
         moveSpeed = moveSpeed / 1000;
         xDirection = Random.Range(-3f, 3f);
         zDirection = Random.Range(-3f, 3f);
-        rb = GetComponent<Rigidbody>();
     }
 
     private void Update()

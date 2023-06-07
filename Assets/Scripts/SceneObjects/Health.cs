@@ -13,8 +13,9 @@ public class Health : MonoBehaviour
         if (health < 1)
         {
             if (gameObject.GetComponent<LootDrop>() != null) gameObject.GetComponent<LootDrop>().DropLoot();
-            
-            if(gameObject.GetComponent<Shatter>() != null) gameObject.GetComponent<Shatter>().Destruct();
+            if (gameObject.GetComponent<ChickenAI>() != null) GameObject.FindWithTag("Spawner").GetComponent<Spawner>().chickenSpawning = true;
+
+            if (gameObject.GetComponent<Shatter>() != null) gameObject.GetComponent<Shatter>().Destruct();
             Destroy(gameObject);
            
         }
