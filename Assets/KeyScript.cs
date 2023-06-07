@@ -4,10 +4,14 @@ using UnityEngine;
 
 public class KeyScript : MonoBehaviour
 {
-    [SerializeField]
-    GameObject burDörr;
-    [SerializeField]
-    GameObject vakter;
+    private GameObject burDörr;
+    private GameObject vakter;
+
+    private void Start()
+    {
+        burDörr = GameObject.Find("CageDoor");
+        vakter = GameObject.Find("Vakter");
+    }
 
     private void OnCollisionEnter(Collision collision) {if(collision.gameObject == burDörr && vakter == null) burDörr.SetActive(false);}
 
