@@ -176,9 +176,13 @@ public class PlayerControll : MonoBehaviour
 
     void CarryObject()
     {
-        Vector3 desiredPosition = transform.position + transform.forward * 0.5f + Vector3.up * 0.5f;
-        carriedObject.transform.position = desiredPosition;
-        carriedObject.GetComponent<Rigidbody>().velocity = rb.velocity;
+        if (carriedObject != null)
+        {
+            Vector3 desiredPosition = transform.position + transform.forward * 0.5f + Vector3.up * 0.5f;
+            carriedObject.transform.position = desiredPosition;
+            carriedObject.GetComponent<Rigidbody>().velocity = rb.velocity;
+        }
+        
 
     }
 
