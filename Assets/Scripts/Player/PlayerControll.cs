@@ -47,7 +47,7 @@ public class PlayerControll : MonoBehaviour
         if (movement.magnitude > 0.1f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(movement);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 5f * Time.deltaTime);
 
             if (springer)
             {
@@ -70,7 +70,7 @@ public class PlayerControll : MonoBehaviour
         movement = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * movement;
         movement.Normalize();
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0))
         {
             AttackSword();
             
@@ -114,7 +114,7 @@ public class PlayerControll : MonoBehaviour
     {
         if(swordSwing != null)
         {
-            swordSwing.PlaySwingAnimation();
+            swordSwing.AttackSwing();
         }
 
     }
