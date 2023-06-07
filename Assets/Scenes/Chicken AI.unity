@@ -3068,7 +3068,7 @@ GameObject:
   - component: {fileID: 685309746}
   - component: {fileID: 685309745}
   m_Layer: 0
-  m_Name: Text (TMP)
+  m_Name: SecondText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8208,7 +8208,7 @@ GameObject:
   - component: {fileID: 2000104023}
   - component: {fileID: 2000104022}
   m_Layer: 0
-  m_Name: Cube (4)
+  m_Name: Controls Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
