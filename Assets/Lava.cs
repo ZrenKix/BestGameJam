@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    Health health;
-
 
     private void OnCollisionEnter(Collision collision)
     {
