@@ -67,7 +67,6 @@ public class PlayerControll : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             AttackSword();
-            
         }
         
 
@@ -104,14 +103,15 @@ public class PlayerControll : MonoBehaviour
         }
     }
 
-    void AttackSword()
+    void AttackSword() //Trigger 3 hit combo attack
     {
         if(swordSwing != null)
         {
-            swordSwing.PlaySwingAnimation();
+            //swordSwing.PlaySwingAnimation();
+            swordSwing.AttackSwing();
         }
-
     }
+
 
     public void SetHorseController(HorseController horse)
     {

@@ -2,19 +2,24 @@ using UnityEngine;
 
 public class SwordSwing : MonoBehaviour
 {
+    public GameObject link;
     private Animator animator;
     private bool attack = false;
     private float swingCoolDown = 1f;
     private float lastSwingTime;
     private Transform rightArm;
+    private int swingCount = 0;
+    private float currentTime;
 
     void Start()
     {
-        animator = GetComponent<Animator>();
-        lastSwingTime = -swingCoolDown;
+        animator = link.GetComponent<Animator>();
+        
+        lastSwingTime = swingCoolDown; //Turned to positive for first swing
         
         rightArm = transform.parent.parent;
     }
+
 
     public void PlaySwingAnimation()
     {
@@ -31,6 +36,37 @@ public class SwordSwing : MonoBehaviour
         {
             transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
         }
+    }
+
+
+    public void AttackSwing() { // 3 hit combo attack
+        float currentTime = Time.time;
+        animator.SetLayerWeight(1,1);
+        swingCount++;
+        animator.SetInteger("SwingNr",swingCount); //Triggers animation
+        //Debug.Log("Swing count " + swingCount);
+        switch (swingCount)
+        {   
+            case 1:
+                animator.Play("SwingOne",1);
+                break;
+            case 2:
+                animator.Play("SwingTwo", 1);
+                break;
+
+            default:
+                animator.SetLayerWeight(1,0);
+                break;
+        }
+        Debug.Log("Swing count: " + swingCount);
+        if (currentTime - lastSwingTime > swingCoolDown) { //if between currentTime and last attack > AttackWindow -> reset timer
+            lastSwingTime = currentTime;
+            swingCount = 0;
+            animator.SetInteger("SwingNr", swingCount);
+            animator.SetLayerWeight(1,0); //Close layer
+            Debug.Log("Reset!");
+        }
+
     }
 
     void OnTriggerEnter(Collider other)
