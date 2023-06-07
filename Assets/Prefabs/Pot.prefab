@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1427494974415915344}
   - component: {fileID: 7939043309410300852}
   - component: {fileID: 2553782899817337093}
+  - component: {fileID: 554641122}
   m_Layer: 7
   m_Name: Pot
   m_TagString: PickUp
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3045465791270550847}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 9.158971, y: -0.10677385, z: -13.082788}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -97,6 +98,20 @@ MonoBehaviour:
   - {fileID: 3690014814886779844, guid: b33551b36c0156648b76178dc059b1d9, type: 3}
   - {fileID: 3690014814886779844, guid: b33551b36c0156648b76178dc059b1d9, type: 3}
   - {fileID: 222568152791229298, guid: 816a63f915e419746934300e764e620f, type: 3}
+--- !u!114 &554641122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3045465791270550847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f4d37da64d1b8d4b801e910f2a1fd45, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  crackedPot: {fileID: 1769054304236152920, guid: 6fde7a0a040752945a8a6c269b97b019,
+    type: 3}
 --- !u!1 &6327101042255955430
 GameObject:
   m_ObjectHideFlags: 0
