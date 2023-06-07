@@ -5,7 +5,7 @@ public class SwordSwing : MonoBehaviour
     public GameObject link;
     private Animator animator;
     private bool attack = false;
-    private float swingCoolDown = 1f;
+    private float swingCoolDown = 0.3f;
     private float lastSwingTime;
     private Transform rightArm;
     private int swingCount = 0;
