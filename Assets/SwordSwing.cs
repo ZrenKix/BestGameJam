@@ -49,6 +49,7 @@ public class SwordSwing : MonoBehaviour
         else
         {
             transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
+
         }
     }
 
