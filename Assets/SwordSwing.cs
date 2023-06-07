@@ -40,6 +40,7 @@ public class SwordSwing : MonoBehaviour
 
 
     public void AttackSwing() { // 3 hit combo attack
+        attack = true;
         float currentTime = Time.time;
         animator.SetLayerWeight(1,1);
         swingCount++;
@@ -65,6 +66,7 @@ public class SwordSwing : MonoBehaviour
             animator.SetInteger("SwingNr", swingCount);
             animator.SetLayerWeight(1,0); //Close layer
             Debug.Log("Reset!");
+            attack = false;
         }
 
     }

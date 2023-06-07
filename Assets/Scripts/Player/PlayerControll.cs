@@ -91,18 +91,18 @@ public class PlayerControll : MonoBehaviour
             if (!isCarrying)
             {
                 PickUpObject();
-                Debug.Log("Pick uped object");
+              
             }
             else
             {
                 DropObject();
-                Debug.Log("yeeet");
+              
             }
         }
         if (isCarrying)
         {
             CarryObject();
-            Debug.Log("jag bär på något");
+          
         }
         if (movement.magnitude > 0.1f)
         {
@@ -143,7 +143,7 @@ public class PlayerControll : MonoBehaviour
         else
         {
             ärPåMark = false;
-            Debug.Log("Jag är i luften");
+            
         }
     }
 
@@ -164,7 +164,7 @@ public class PlayerControll : MonoBehaviour
                
                 int playerLayer = LayerMask.NameToLayer("Player");
                 Physics.IgnoreLayerCollision(playerLayer, carriedObjectLayer, true);
-                Debug.Log(hit + "kolliderar med pickup");
+               
                 carriedObject.GetComponent<Rigidbody>().isKinematic = true;
                 carriedObject.transform.SetParent(transform);
                 carriedObject.transform.localPosition = new Vector3(0f, 0.5f, 0.5f);
@@ -176,13 +176,17 @@ public class PlayerControll : MonoBehaviour
 
     void CarryObject()
     {
-        Vector3 desiredPosition = transform.position + transform.forward * 0.5f + Vector3.up * 0.5f;
-        carriedObject.transform.position = desiredPosition;
-        carriedObject.GetComponent<Rigidbody>().velocity = rb.velocity;
+        if (carriedObject != null)
+        {
+            Vector3 desiredPosition = transform.position + transform.forward * 0.5f + Vector3.up * 0.5f;
+            carriedObject.transform.position = desiredPosition;
+            carriedObject.GetComponent<Rigidbody>().velocity = rb.velocity;
+        }
+        
 
     }
 
-    void DropObject()
+    public void DropObject()
     {
         int playerLayer = LayerMask.NameToLayer("Player");
         int carriedObjectLayer = LayerMask.NameToLayer("CarriedObject");
