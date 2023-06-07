@@ -22,6 +22,9 @@ public class PlayerControll : MonoBehaviour
 
     private int defaultLayer;
 
+    [SerializeField]
+    private Transform cameraTransform;
+    
     private Rigidbody rb;
     private Transform playerCameraTransform;
 
@@ -64,7 +67,8 @@ public class PlayerControll : MonoBehaviour
         }
 
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
-
+        movement = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * movement;
+        movement.Normalize();
 
         if (Input.GetButtonDown("Jump"))
         {
@@ -113,6 +117,18 @@ public class PlayerControll : MonoBehaviour
             swordSwing.PlaySwingAnimation();
         }
 
+    }
+
+    private void OnApplicationFocus(bool focus)
+    {
+        if (focus)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
 
