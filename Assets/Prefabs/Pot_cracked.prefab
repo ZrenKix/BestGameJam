@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: -2215670785133275804}
   - component: {fileID: 1983045421898502692}
   - component: {fileID: 7684244268411082799}
+  - component: {fileID: 3388204096360729790}
   m_Layer: 0
   m_Name: Pot_p3
   m_TagString: Untagged
@@ -115,6 +116,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3388204096360729790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -8605201878375166926}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c431e7f7d6788c04a9de86e7059be70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &-1517830613657838586
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +141,7 @@ GameObject:
   - component: {fileID: 457120093007779395}
   - component: {fileID: 1062621919859100883}
   - component: {fileID: 1506898878796566041}
+  - component: {fileID: 6967452564099830437}
   m_Layer: 0
   m_Name: Pot_p5
   m_TagString: Untagged
@@ -230,6 +244,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6967452564099830437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -1517830613657838586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c431e7f7d6788c04a9de86e7059be70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &-919956206714037893
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,6 +269,7 @@ GameObject:
   - component: {fileID: 273245145121884137}
   - component: {fileID: 9070156739198841386}
   - component: {fileID: 2110644523291116471}
+  - component: {fileID: 5758685694700353563}
   m_Layer: 0
   m_Name: Pot_p4
   m_TagString: Untagged
@@ -345,6 +372,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &5758685694700353563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: -919956206714037893}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c431e7f7d6788c04a9de86e7059be70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1769054304236152920
 GameObject:
   m_ObjectHideFlags: 0
@@ -360,7 +399,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4403337010903562762
 Transform:
   m_ObjectHideFlags: 0
@@ -394,6 +433,7 @@ GameObject:
   - component: {fileID: -6915701413845330029}
   - component: {fileID: 5070426111585375991}
   - component: {fileID: 6011235912448059159}
+  - component: {fileID: 4365729607816859228}
   m_Layer: 0
   m_Name: Pot_p1
   m_TagString: Untagged
@@ -496,6 +536,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4365729607816859228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8307981654309102624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c431e7f7d6788c04a9de86e7059be70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8912164442884692497
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +561,7 @@ GameObject:
   - component: {fileID: 47115306364817412}
   - component: {fileID: 2036476029364464164}
   - component: {fileID: 4572415181860406986}
+  - component: {fileID: 7108758134925099949}
   m_Layer: 0
   m_Name: Pot_p2
   m_TagString: Untagged
@@ -611,3 +664,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &7108758134925099949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8912164442884692497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c431e7f7d6788c04a9de86e7059be70c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
