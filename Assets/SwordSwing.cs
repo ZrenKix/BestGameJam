@@ -82,10 +82,5 @@ public class SwordSwing : MonoBehaviour
                 Debug.Log("Damaging enemy");
             }
         }
-
-        if(other.CompareTag("PickUp") && attack) { //Break when hit
-            Shatter shatter = other.GetComponent<Shatter>();
-            shatter.Destruct();
-        }
     }
 }

@@ -6,11 +6,16 @@ public class Shatter : MonoBehaviour
 {
     public GameObject crackedPot;
     private float duration = 5f;
-    private float time = 0f;
+    private float time;
     public void Destruct() {
         Debug.Log("SHATTER!");
         Instantiate(crackedPot, transform.position, transform.rotation);
-        Destroy(gameObject);
+        time = Time.time;
+
+        if(time > duration) {
+            crackedPot.gameObject.SetActive(false);
+        }
+        
     }
 
     public void ClearDebris() {
@@ -18,9 +23,8 @@ public class Shatter : MonoBehaviour
     }
 
     private void Update() {
-        time += Time.deltaTime;
-        if(time > duration) {
-            crackedPot.gameObject.SetActive(false);
+        if(time != null) {
+            time += Time.deltaTime;
         }
     }
 }
