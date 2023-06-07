@@ -25,5 +25,9 @@ public class Health : MonoBehaviour
         } 
         
     }
+    public int getCurrentHealth()
+    {
+        return health;
+    }
 
 }
