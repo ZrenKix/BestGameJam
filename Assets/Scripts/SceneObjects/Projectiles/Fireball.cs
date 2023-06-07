@@ -31,7 +31,7 @@ public class Fireball : MonoBehaviour
         Debug.Log("Hit!");
         if (collision != null && collision.gameObject.GetComponent<Health>() != null)
         {
-            collision.gameObject.GetComponent<Health>().takeDamage(1);
+            collision.gameObject.GetComponent<Health>().takeDamage();
             Destroy(gameObject);
         }
     }

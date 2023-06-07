@@ -2,34 +2,14 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField]
-    private int health;
-    [SerializeField]
-    private int maxHealth;
+    public int health;
 
-    public void takeDamage(int damage)
+    public void takeDamage()
     {
-        health -= damage;
+        health--;
         if (health < 0)
         {
             Destroy(gameObject);
         }
-    }
-
-    public void increaseHealth(int health)
-    {
-        int newHealth = this.health + health;
-        if (newHealth > maxHealth)
-        {
-            health = maxHealth;
-        } else
-        {
-            health = newHealth;
-        }
-    }
-
-    public int getCurrenthealth()
-    {
-        return health;
     }
 }
