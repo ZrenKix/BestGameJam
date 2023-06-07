@@ -94,9 +94,11 @@ GameObject:
   - component: {fileID: 5314933299498120921}
   - component: {fileID: 1416075494712449198}
   - component: {fileID: 5402805838892216740}
+  - component: {fileID: 296741542}
+  - component: {fileID: 296741546}
   m_Layer: 0
   m_Name: Bush
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,3 +149,30 @@ MonoBehaviour:
     type: 3}
   crackedBush: {fileID: 1497884023653496281, guid: 040ee6e18d06f754e95a775c21553e00,
     type: 3}
+--- !u!64 &296741542
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3026314853222981812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
+--- !u!65 &296741546
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3026314853222981812}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
