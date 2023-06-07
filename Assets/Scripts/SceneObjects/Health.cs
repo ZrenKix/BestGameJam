@@ -12,6 +12,7 @@ public class Health : MonoBehaviour
         health -= damage;
         if (health < 0)
         {
+            LootDrop.Instance.DropLoot();
             Destroy(gameObject);
         }
     }
