@@ -1,6 +1,6 @@
 # Blender v3.5.1 OBJ File: 'ZeldaLTP_Room.blend'
 # www.blender.org
-mtllib ZeldaLTP_Room.mtl
+mtllib LinkRoom.mtl
 o Cube_Cube.001
 v -4.195304 0.164540 3.053501
 v -4.195304 3.792752 3.053501
