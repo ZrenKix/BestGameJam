@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -688,31 +688,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -50.973, z: 0}
---- !u!1 &668487725 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7494174060993789065, guid: 7a7065ce0c900c54e98c20786e734a99,
-    type: 3}
-  m_PrefabInstance: {fileID: 1878532312}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &668487731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
     type: 3}
   m_PrefabInstance: {fileID: 1878532312}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &668487732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 668487725}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6de0983f7dffc349b0693f64e36ef39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 2
 --- !u!1001 &785995592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -864,6 +845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
 --- !u!1001 &897159499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1015,6 +997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
+  maxHealth: 0
 --- !u!1 &1345495062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
+  maxHealth: 0
 --- !u!114 &1389394243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1453,11 +1437,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Link
-      objectReference: {fileID: 0}
-    - target: {fileID: 7494174060993789065, guid: 7a7065ce0c900c54e98c20786e734a99,
-        type: 3}
-      propertyPath: m_TagString
-      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a7065ce0c900c54e98c20786e734a99, type: 3}
