@@ -85,7 +85,7 @@ public class PlayerControll : MonoBehaviour
             if (!isCarrying)
             {
                 PickUpObject();
-                Debug.Log("Pick uped object");
+                Debug.Log("Picked up object");
             }
             else
             {
@@ -156,6 +156,7 @@ public class PlayerControll : MonoBehaviour
                 carriedObject.transform.localPosition = new Vector3(0f, 0.5f, 0.5f);
                 isCarrying = true;
                 animator.SetBool("Grabbing", true);
+
             }
         }
     }
