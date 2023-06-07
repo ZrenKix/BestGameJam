@@ -11,6 +11,8 @@ public class SpeedPickup : MonoBehaviour
     [SerializeField] private int sprintSpeedIncrease = 1;
     [SerializeField] private GameObject liquid;
     [SerializeField] private GameObject lid;
+    [SerializeField] private AudioClip drink;
+    [SerializeField] private AudioSource audioSource;
 
     void Update()
     { if (!hasPickedUp)
@@ -25,6 +27,7 @@ public class SpeedPickup : MonoBehaviour
                     playerControl.sprintSpeed += sprintSpeedIncrease;
                     playerControl.walkSpeed += walkSpeedIncrease;
                     hasPickedUp = true;
+                    audioSource.PlayOneShot(drink);
                     StartCoroutine("RemoveLiquid");
                     StartCoroutine("DropAfterTime");
                     StartCoroutine("DestroyPotionAfterTime");
