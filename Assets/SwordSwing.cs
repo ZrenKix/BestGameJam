@@ -5,11 +5,12 @@ public class SwordSwing : MonoBehaviour
     public GameObject link;
     private Animator animator;
     private bool attack = false;
-    private float swingCoolDown = 0.3f;
+    private float swingCoolDown = 1f;
     private float lastSwingTime;
     private Transform rightArm;
     private int swingCount = 0;
-    private float currentTime;
+    private float currentTime = 0;
+    private float duration = 3f;
 
     void Start()
     {
@@ -20,6 +21,19 @@ public class SwordSwing : MonoBehaviour
         rightArm = transform.parent.parent;
     }
 
+    private void Update() {  
+        if(swingCount != 0) {
+            currentTime += Time.deltaTime;
+            if (currentTime > swingCoolDown)
+            {
+                animator.SetLayerWeight(1, 0);
+                animator.SetInteger("SwingNr", 0);
+                swingCount = 0;
+                currentTime = 0;
+            }
+        }
+        
+    }
 
     public void PlaySwingAnimation()
     {
@@ -35,7 +49,6 @@ public class SwordSwing : MonoBehaviour
         else
         {
             transform.localRotation = Quaternion.Euler(0f, 90f, 0f);
-            attack = false;
         }
     }
 
@@ -44,30 +57,31 @@ public class SwordSwing : MonoBehaviour
         attack = true;
         float currentTime = Time.time;
         animator.SetLayerWeight(1,1);
-        swingCount++;
+        swingCount += 1;
         animator.SetInteger("SwingNr",swingCount); //Triggers animation
         //Debug.Log("Swing count " + swingCount);
         switch (swingCount)
         {   
             case 1:
-                animator.Play("SwingOne",1);
+                animator.Play("SwingOne", 1);
                 break;
             case 2:
                 animator.Play("SwingTwo", 1);
                 break;
-
             default:
-                animator.SetLayerWeight(1,0);
+
                 break;
         }
         Debug.Log("Swing count: " + swingCount);
+
+
         if (currentTime - lastSwingTime > swingCoolDown) { //if between currentTime and last attack > AttackWindow -> reset timer
             lastSwingTime = currentTime;
             swingCount = 0;
             animator.SetInteger("SwingNr", swingCount);
             animator.SetLayerWeight(1,0); //Close layer
             Debug.Log("Reset!");
-           
+            //attack = false;
         }
 
     }
