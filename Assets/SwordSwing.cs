@@ -95,7 +95,15 @@ public class SwordSwing : MonoBehaviour
             {
                 enemy.takeDamage(1);
                 Debug.Log("Damaging enemy");
+            } 
+            
+            if(other.CompareTag("Untagged") && other.GetComponent<Shatter>() != null ) {
+                other.GetComponent<Health>().takeDamage(1);
+                other.GetComponent<Shatter>().DestructBush();
+                Debug.Log("BUSH BE GONE!");
             }
         }
+
+        
     }
 }
