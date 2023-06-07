@@ -1064,7 +1064,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: -50.973, z: 0}
-<<<<<<< HEAD
 --- !u!1 &359815451
 GameObject:
   m_ObjectHideFlags: 3
@@ -1198,14 +1197,25 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1878532312}
   m_PrefabAsset: {fileID: 0}
-=======
->>>>>>> main
 --- !u!4 &668487731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
     type: 3}
   m_PrefabInstance: {fileID: 1878532312}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &668487732
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668487725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6de0983f7dffc349b0693f64e36ef39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 2
 --- !u!1001 &785995592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1357,16 +1367,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-<<<<<<< HEAD
 --- !u!4 &843723726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2923743195684828003, guid: 7a7065ce0c900c54e98c20786e734a99,
     type: 3}
   m_PrefabInstance: {fileID: 1878532312}
   m_PrefabAsset: {fileID: 0}
-=======
-  maxHealth: 0
->>>>>>> main
 --- !u!1001 &897159499
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1518,7 +1524,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-<<<<<<< HEAD
 --- !u!1 &998773338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1734,9 +1739,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
-  maxHealth: 0
->>>>>>> main
 --- !u!1 &1345495062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1892,7 +1894,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 1
-  maxHealth: 0
 --- !u!114 &1389394243
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2511,7 +2512,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Link
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 7494174060993789065, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
       propertyPath: m_TagString
@@ -2522,8 +2522,6 @@ PrefabInstance:
       propertyPath: cameraTransform
       value: 
       objectReference: {fileID: 1629562760}
-=======
->>>>>>> main
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a7065ce0c900c54e98c20786e734a99, type: 3}
 --- !u!1001 &1988481995
