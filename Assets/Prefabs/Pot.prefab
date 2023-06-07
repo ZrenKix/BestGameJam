@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4357590386592540231}
   - component: {fileID: 1427494974415915344}
   - component: {fileID: 7939043309410300852}
+  - component: {fileID: 2553782899817337093}
   m_Layer: 7
   m_Name: Pot
   m_TagString: PickUp
@@ -46,8 +47,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.37890053, y: 0.44253248, z: 1}
-  m_Center: {x: 0.052947044, y: 0.27873376, z: 0}
+  m_Size: {x: 0.37890053, y: 0.44253248, z: 0.5018034}
+  m_Center: {x: 0.052947044, y: 0.27873376, z: -0.05284643}
 --- !u!54 &1427494974415915344
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -76,8 +77,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6de0983f7dffc349b0693f64e36ef39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1
+  health: 0
   maxHealth: 0
+--- !u!114 &2553782899817337093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3045465791270550847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5b444df79b0c674d996927c139b44e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uppPlockad: 0
+  droppadAvParent: 0
+  prefabs:
+  - {fileID: 3690014814886779844, guid: b33551b36c0156648b76178dc059b1d9, type: 3}
+  - {fileID: 3690014814886779844, guid: b33551b36c0156648b76178dc059b1d9, type: 3}
+  - {fileID: 222568152791229298, guid: 816a63f915e419746934300e764e620f, type: 3}
 --- !u!1 &6327101042255955430
 GameObject:
   m_ObjectHideFlags: 0
