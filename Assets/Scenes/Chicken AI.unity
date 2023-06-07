@@ -333,7 +333,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 14061216}
-  m_LocalRotation: {x: 0.12066459, y: 0.0000000042701656, z: -5.1905036e-10, w: 0.99269336}
+  m_LocalRotation: {x: 0.09058921, y: 0.6740522, z: -0.08384186, w: 0.7282979}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -529,7 +529,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 47377521}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 2.7700317, z: 50.753998}
+  m_LocalPosition: {x: -59.373043, y: 3.562, z: -1.8538673}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -11123,7 +11123,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1406800921}
-  m_LocalRotation: {x: 0.13870122, y: 1e-45, z: -0, w: 0.99033433}
+  m_LocalRotation: {x: 0.1038216, y: 0.6724157, z: -0.09608868, w: 0.72652966}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -11799,8 +11799,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1629562757}
-  m_LocalRotation: {x: 0.1206646, y: 0.000000004270166, z: -5.1905036e-10, w: 0.99269336}
-  m_LocalPosition: {x: -0.5, y: 2.7700317, z: 50.753998}
+  m_LocalRotation: {x: 0.090589225, y: 0.6740522, z: -0.08384188, w: 0.7282978}
+  m_LocalPosition: {x: -56.463486, y: 2.7546535, z: -1.7137718}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -12485,7 +12485,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738502126}
-  m_LocalRotation: {x: 0.10263582, y: -0.000000004278879, z: 4.4149776e-10, w: 0.994719}
+  m_LocalRotation: {x: 0.07736192, y: 0.6754623, z: -0.071599774, w: 0.7298215}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13107,37 +13107,37 @@ PrefabInstance:
     - target: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.5
+      value: -52.342
       objectReference: {fileID: 0}
     - target: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00003170967
+      value: 0.792
       objectReference: {fileID: 0}
     - target: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 57.8
+      value: -1.395
       objectReference: {fileID: 0}
     - target: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7297687
       objectReference: {fileID: 0}
     - target: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.6836942
       objectReference: {fileID: 0}
     - target: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
@@ -13147,7 +13147,7 @@ PrefabInstance:
     - target: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 86.266
       objectReference: {fileID: 0}
     - target: {fileID: 7154943510524421683, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
