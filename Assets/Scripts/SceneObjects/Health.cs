@@ -14,7 +14,7 @@ public class Health : MonoBehaviour
         {
             if (gameObject.GetComponent<LootDrop>() != null) gameObject.GetComponent<LootDrop>().DropLoot();
             
-          
+            if(gameObject.GetComponent<Shatter>() != null) gameObject.GetComponent<Shatter>().Destruct();
             Destroy(gameObject);
            
         }
