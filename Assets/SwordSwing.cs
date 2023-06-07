@@ -66,7 +66,7 @@ public class SwordSwing : MonoBehaviour
             animator.SetInteger("SwingNr", swingCount);
             animator.SetLayerWeight(1,0); //Close layer
             Debug.Log("Reset!");
-            attack = false;
+           
         }
 
     }
