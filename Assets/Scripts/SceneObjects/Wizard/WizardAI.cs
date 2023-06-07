@@ -40,12 +40,13 @@ public class WizardAI : MonoBehaviour
             {
                 agent.SetDestination(target.position);
 
+                // Shoot fireball
                 if (timer > cooldown)
                 {
                     timer = 0;
 
                     RaycastHit hit;
-                    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, Mathf.Infinity, 1))
+                    if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 20f, 1))
                     {
                         ShootFireBall();
                     }
