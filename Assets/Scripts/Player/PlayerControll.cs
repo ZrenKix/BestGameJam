@@ -22,14 +22,18 @@ public class PlayerControll : MonoBehaviour
 
     private int defaultLayer;
 
-    private HorseController horseController;
+    [SerializeField]
+    private Transform cameraTransform;
+    
     private Rigidbody rb;
+    private Transform playerCameraTransform;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         swordSwing = GetComponentInChildren<SwordSwing>();
         animator = GetComponent<Animator>();
+        playerCameraTransform = Camera.main.transform;
     }
 
     void Update()
@@ -37,12 +41,13 @@ public class PlayerControll : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0f, moveVertical);
+        Vector3 cameraForward = Vector3.Scale(playerCameraTransform.forward, new Vector3(1, 0, 1)).normalized;
+        Vector3 movement = (moveHorizontal * playerCameraTransform.right + moveVertical * cameraForward).normalized;
 
         if (movement.magnitude > 0.1f)
         {
             Quaternion targetRotation = Quaternion.LookRotation(movement);
-            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
+            transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, 5f * Time.deltaTime);
 
             if (springer)
             {
@@ -62,9 +67,10 @@ public class PlayerControll : MonoBehaviour
         }
 
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        movement = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * movement;
+        movement.Normalize();
 
-
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0))
         {
             AttackSword();
             
@@ -85,7 +91,7 @@ public class PlayerControll : MonoBehaviour
             if (!isCarrying)
             {
                 PickUpObject();
-                Debug.Log("Picked up object");
+                Debug.Log("Pick uped object");
             }
             else
             {
@@ -108,15 +114,23 @@ public class PlayerControll : MonoBehaviour
     {
         if(swordSwing != null)
         {
-            swordSwing.PlaySwingAnimation();
+            swordSwing.AttackSwing();
         }
 
     }
 
-    public void SetHorseController(HorseController horse)
+    private void OnApplicationFocus(bool focus)
     {
-        horseController = horse;
+        if (focus)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
+
 
     void FixedUpdate()
     {
@@ -156,7 +170,6 @@ public class PlayerControll : MonoBehaviour
                 carriedObject.transform.localPosition = new Vector3(0f, 0.5f, 0.5f);
                 isCarrying = true;
                 animator.SetBool("Grabbing", true);
-
             }
         }
     }
