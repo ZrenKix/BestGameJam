@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.collider.GetComponent<Health>() != null)
+        if (other.GetComponent<Health>() != null)
         {
-            collision.collider.GetComponent<Health>().takeDamage(20);
+           
+            other.GetComponent<Health>().takeDamage(20);
+            
         }
     }
+   
 }
