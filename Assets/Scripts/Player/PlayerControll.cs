@@ -70,7 +70,7 @@ public class PlayerControll : MonoBehaviour
         movement = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * movement;
         movement.Normalize();
 
-        if (Input.GetButtonDown("Jump") || Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             AttackSword();
             
@@ -86,7 +86,7 @@ public class PlayerControll : MonoBehaviour
             springer = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.P))
+        if (Input.GetButtonDown("Jump"))
         {
             if (!isCarrying)
             {
