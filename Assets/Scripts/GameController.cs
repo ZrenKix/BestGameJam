@@ -35,19 +35,16 @@ public class GameController : MonoBehaviour
         }
     }
     public void FadeScreen() {
-        Debug.Log("StartCorutine!");
         StartCoroutine(DoFade());
     }
 
     
     IEnumerator DoFade() {
-        Debug.Log("Start Fade scene");
         var currentColor = blackPanel.color;
         
         while(canvasGroup.alpha < 1) {
            canvasGroup.alpha += Time.deltaTime / 2;
            //blackPanel.color = currentColor;
-           Debug.Log(canvasGroup.alpha);
            yield return null;
         }
 
