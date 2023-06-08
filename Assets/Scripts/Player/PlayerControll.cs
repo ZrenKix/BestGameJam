@@ -1,8 +1,10 @@
 using System;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerControll : MonoBehaviour
 {
+    PlayerControls controls;
     public float walkSpeed = 5f;
     public float sprintSpeed = 10f;
     public float jumpForce = 5f;
@@ -27,6 +29,32 @@ public class PlayerControll : MonoBehaviour
     
     private Rigidbody rb;
     private Transform playerCameraTransform;
+    private void Awake()
+    {
+        controls = new PlayerControls();
+        controls.GamePlay.PickupDrop.started += ctx => PickUpObject();
+        controls.GamePlay.PickupDrop.canceled += ctx => DropObject();
+        controls.GamePlay.Usesword.performed += ctx => AttackSword();
+        controls.GamePlay.Sprint.started += ctx => Sprint();
+        controls.GamePlay.Sprint.canceled += ctx => StopSprint();
+
+    }
+    private void OnEnable()
+    {
+        controls.GamePlay.Enable();
+    }
+    private void OnDisable()
+    {
+        controls.GamePlay.Disable();
+    }
+    void Sprint()
+    {
+        springer = true;
+    }
+    void StopSprint()
+    {
+        springer = false;
+    }
 
     void Start()
     {
@@ -70,22 +98,23 @@ public class PlayerControll : MonoBehaviour
         movement = Quaternion.AngleAxis(cameraTransform.rotation.eulerAngles.y, Vector3.up) * movement;
         movement.Normalize();
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            AttackSword();
-            
-        }
-        
+        /* if (Input.GetMouseButtonDown(0)) //Innan nya inputSystemet
+         {
+             AttackSword();
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
-        {
-            springer = true;
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            springer = false;
-        }
+         }
 
+
+         if (Input.GetKeyDown(KeyCode.LeftShift))
+         {
+             springer = true;
+         }
+         if (Input.GetKeyUp(KeyCode.LeftShift))
+         {
+             springer = false;
+         }
+        */
+        /*
         if (Input.GetButtonDown("Jump"))
         {
             if (!isCarrying)
@@ -99,6 +128,7 @@ public class PlayerControll : MonoBehaviour
               
             }
         }
+        */
         if (isCarrying)
         {
             CarryObject();
