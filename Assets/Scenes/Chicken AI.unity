@@ -12981,7 +12981,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738502126}
-  m_LocalRotation: {x: 0.0835918, y: 0.6762188, z: -0.07766627, w: 0.7278108}
+  m_LocalRotation: {x: 0.083591804, y: 0.67621875, z: -0.07766625, w: 0.72781086}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -13743,6 +13743,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062249349314061747, guid: 7a7065ce0c900c54e98c20786e734a99,
+        type: 3}
+      propertyPath: walkSpeed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8062249349314061747, guid: 7a7065ce0c900c54e98c20786e734a99,
+        type: 3}
+      propertyPath: sprintSpeed
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8062249349314061747, guid: 7a7065ce0c900c54e98c20786e734a99,
         type: 3}
@@ -15280,12 +15290,12 @@ PrefabInstance:
     - target: {fileID: 2346799210017845465, guid: 0576711bfd5c1e24b890e898f2585099,
         type: 3}
       propertyPath: cooldown
-      value: 1.07
+      value: 1.56
       objectReference: {fileID: 0}
     - target: {fileID: 2346799210017845467, guid: 0576711bfd5c1e24b890e898f2585099,
         type: 3}
       propertyPath: m_Speed
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2817907632192306618, guid: 0576711bfd5c1e24b890e898f2585099,
         type: 3}

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1345558944317614132}
   - component: {fileID: 1345558944317614135}
   - component: {fileID: 4473650125521133165}
+  - component: {fileID: 8302349096701856608}
   m_Layer: 7
   m_Name: Bottle
   m_TagString: PickUp
@@ -84,6 +85,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1164445, y: 1.9186163, z: 1.2372024}
   m_Center: {x: 0.24798355, y: 0.9509635, z: 0.20916918}
+--- !u!135 &8302349096701856608
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690014814886779844}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.65
+  m_Center: {x: 0.25, y: 0.93, z: 0.18}
 --- !u!1 &5672383838721024797
 GameObject:
   m_ObjectHideFlags: 0

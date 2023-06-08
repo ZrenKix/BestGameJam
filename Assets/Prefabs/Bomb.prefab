@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4192132363881702950}
   - component: {fileID: 1431701427011893651}
   - component: {fileID: 6571750255020345604}
+  - component: {fileID: 1239428489749900176}
   m_Layer: 7
   m_Name: Bomb
   m_TagString: PickUp
@@ -80,6 +81,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &1239428489749900176
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 222568152791229298}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2
+  m_Center: {x: 0, y: 2.02, z: 0}
 --- !u!1 &9123012386663226283
 GameObject:
   m_ObjectHideFlags: 0

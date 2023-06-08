@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2776680457351173726}
   - component: {fileID: 6739038451564481344}
   - component: {fileID: 2363787126051808102}
+  - component: {fileID: 3345918284576511267}
   m_Layer: 7
   m_Name: heart
   m_TagString: PickUp
@@ -76,6 +77,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1064796, y: 1.0163988, z: 0.31653595}
   m_Center: {x: -0.053239822, y: 0.49822742, z: -0.045131683}
+--- !u!135 &3345918284576511267
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3657357432488612922}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.83
+  m_Center: {x: -0.03, y: 0.52, z: 0}
 --- !u!1 &5714013312375401699
 GameObject:
   m_ObjectHideFlags: 0

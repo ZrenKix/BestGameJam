@@ -21,6 +21,7 @@ public class PlayerControll : MonoBehaviour
     private SwordSwing swordSwing;
     private Animator animator;
     public ParticleSystem dust;
+    public GameObject rightArm;
 
     private int defaultLayer;
 
@@ -62,6 +63,7 @@ public class PlayerControll : MonoBehaviour
         swordSwing = GetComponentInChildren<SwordSwing>();
         animator = GetComponent<Animator>();
         playerCameraTransform = Camera.main.transform;
+        rightArm = GameObject.Find("HoldPosition");
     }
 
     void Update()
@@ -185,19 +187,22 @@ public class PlayerControll : MonoBehaviour
             if (hit.collider.CompareTag("PickUp"))
             {
                 carriedObject = hit.collider.gameObject;
+                
+
                 defaultLayer = carriedObject.layer;
 
-               
+                
                 int carriedObjectLayer = LayerMask.NameToLayer("CarriedObject");
                 carriedObject.layer = carriedObjectLayer;
 
                
                 int playerLayer = LayerMask.NameToLayer("Player");
                 Physics.IgnoreLayerCollision(playerLayer, carriedObjectLayer, true);
-               
+
+                carriedObject.transform.position = rightArm.transform.position;
                 carriedObject.GetComponent<Rigidbody>().isKinematic = true;
                 carriedObject.transform.SetParent(transform);
-                carriedObject.transform.localPosition = new Vector3(0f, 0.5f, 0.5f);
+             // carriedObject.transform.localPosition = new Vector3(0f, 0.0f, 0.0f);
                 isCarrying = true;
                 animator.SetBool("Grabbing", true);
             }

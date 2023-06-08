@@ -54,8 +54,8 @@ public class SpeedPickup : MonoBehaviour
     IEnumerator StopSpeedBoost()
     {
         yield return new WaitForSeconds(6f);
-        playerControl.sprintSpeed = 10;
-        playerControl.walkSpeed = 5;
+        playerControl.sprintSpeed = 7;
+        playerControl.walkSpeed = 4;
         Destroy(gameObject);
     }
 

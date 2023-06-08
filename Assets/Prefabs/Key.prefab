@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5989619512427073299}
   - component: {fileID: 7621241885768933523}
   - component: {fileID: 1438044125368326344}
+  - component: {fileID: 3390788538627287543}
   m_Layer: 7
   m_Name: Key
   m_TagString: PickUp
@@ -76,6 +77,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b2b0f4da5400241acb2d2bede607bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgMusic: {fileID: 0}
+--- !u!135 &3390788538627287543
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 118664076976929232}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.83
+  m_Center: {x: -0.03, y: 0.06, z: 0.18}
 --- !u!1 &8946505908518404361
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,3 +187,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51b2b0f4da5400241acb2d2bede607bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bgMusic: {fileID: 0}
