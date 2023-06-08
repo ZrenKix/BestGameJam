@@ -49,7 +49,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 1
-  projectileSpeed: 0.27
+  projectileSpeed: 0.3
 --- !u!65 &-9169126087588255817
 BoxCollider:
   m_ObjectHideFlags: 0
