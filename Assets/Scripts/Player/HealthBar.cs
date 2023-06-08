@@ -6,12 +6,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private AudioClip ouch;
     [SerializeField] private AudioSource audioSource;
     ParticleSystem blood;
-
-
     public Health health;
-    public int oldHealth = 2;
-    
-    
     bool takeDamage = false; 
     int savedHealth = 0;
     
@@ -22,17 +17,6 @@ public class HealthBar : MonoBehaviour
     }
     private void Update()
     {
-        if (oldHealth > health.getCurrentHealth())
-        {
-            audioSource.PlayOneShot(ouch);
-            oldHealth = health.getCurrentHealth();
-            
-
-        }
-        else if (health.getCurrentHealth() < oldHealth)
-        {
-            oldHealth = health.getCurrentHealth();
-        }
         if (health.getCurrentHealth() == 0)
         {
             hearts[0].SetActive(true);
@@ -64,6 +48,7 @@ public class HealthBar : MonoBehaviour
             blood.Play();
             takeDamage = false;
             savedHealth = health.getCurrentHealth();
+            audioSource.PlayOneShot(ouch);
         }
     }
 }
