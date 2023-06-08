@@ -277,8 +277,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8af8de02e31f8646aa9e42f82fa0164, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  items: []
+  items:
+  - gameObject: {fileID: 3045465791270550847, guid: e9de12353af99bc4093ced2ce2db15e7,
+      type: 3}
+    maxAmount: 100
+    currentAmount: 0
+  - gameObject: {fileID: 3026314853222981812, guid: 5d9e64d239095684cad7525203dbe12b,
+      type: 3}
+    maxAmount: 100
+    currentAmount: 0
   terrain: {fileID: 2239087}
+  posMin: 10
+  posMax: 50
 --- !u!1 &14061216
 GameObject:
   m_ObjectHideFlags: 3

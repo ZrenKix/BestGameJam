@@ -8,10 +8,14 @@ public class WorldSpawner : MonoBehaviour
     [SerializeField] private Terrain terrain;
 
     // Terrain values
-    private int terrainWidth; // terrain size (x)
-    private int terrainLength; // terrain size (z)
-    private int terrainPosX; // terrain position x
-    private int terrainPosZ; // terrain position z
+    private int terrainWidth;
+    private int terrainLength;
+    private int terrainPosX;
+    private int terrainPosZ;
+
+    // Limit spawn pos
+    public int posMin;
+    public int posMax;
 
     void Start()
     {
@@ -23,19 +27,32 @@ public class WorldSpawner : MonoBehaviour
 
     void Update()
     {
-        foreach (Item item in items)
+        for (int i = 0; i < items.Length; i++)
         {
-            if (item.currentAmount <= item.maxAmount)
+            if (items[i].currentAmount <= items[i].maxAmount)
             {
-                item.increaseAmount();
-                int posx = Random.Range(terrainPosX, terrainPosX + terrainWidth);
-                int posz = Random.Range(terrainPosZ, terrainPosZ + terrainLength);
-                float posy = Terrain.activeTerrain.SampleHeight(new Vector3(posx, 0, posz));
-                Instantiate(item.gameObject, new Vector3(posx, posy, posz), Quaternion.identity);
-            } else
+                PlaceObject(i);
+            }
+            else
             {
                 Debug.Log("Generate objects complete!");
             }
+        }
+    }
+
+    void PlaceObject(int i)
+    {
+        int posx = Random.Range(terrainPosX, terrainPosX + terrainWidth);
+        int posz = Random.Range(terrainPosZ, terrainPosZ + terrainLength);
+        float posy = Terrain.activeTerrain.SampleHeight(new Vector3(posx, 0, posz));
+        if (posy < posMax && posy > posMin)
+        {
+            GameObject newObject = (GameObject)Instantiate(items[i].gameObject, new Vector3(posx, posy, posz), Quaternion.identity);
+            items[i].currentAmount++;
+        }
+        else
+        {
+            PlaceObject(i);
         }
     }
 }
@@ -46,9 +63,4 @@ public struct Item
     public GameObject gameObject;
     public int maxAmount;
     public int currentAmount;
-
-    public void increaseAmount()
-    {
-        currentAmount++;
-    }
 }
