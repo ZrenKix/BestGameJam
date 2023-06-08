@@ -23,6 +23,7 @@ public class WizardAI : MonoBehaviour
 
     private void Update()
     {
+        RaycastHit hit;
         // Walk towards player
         if (!stopScript)
         {
@@ -45,7 +46,7 @@ public class WizardAI : MonoBehaviour
                 {
                     
 
-                    RaycastHit hit;
+                    //RaycastHit hit;
                     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 20f, 1))
                     {
                         ShootFireBall();
