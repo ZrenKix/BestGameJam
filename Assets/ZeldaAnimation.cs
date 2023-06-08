@@ -12,6 +12,7 @@ public class ZeldaAnimation : MonoBehaviour
     private bool isRotating = true;
     private float totalRotationAngle = 0f;
     ZeldaAnimation zeldaAnimation;
+    public bool hasWon;
 
     private ParticleSystem love;
 
@@ -56,6 +57,7 @@ public class ZeldaAnimation : MonoBehaviour
 
     private System.Collections.IEnumerator PerformMiniJump()
     {
+       
         isJumping = true;
 
         Vector3 targetPosition = initialPosition + Vector3.up * jumpHeight;
