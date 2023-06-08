@@ -11,10 +11,11 @@ GameObject:
   - component: {fileID: 3791543696750198995}
   - component: {fileID: 3680845633363858866}
   - component: {fileID: 3680845633363858867}
-  - component: {fileID: 3680845633363858864}
   - component: {fileID: 7257715563703970484}
+  - component: {fileID: 6598885962869311840}
+  - component: {fileID: -2753789696161076582}
   m_Layer: 7
-  m_Name: Chicken
+  m_Name: AngryChick
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,20 +66,6 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: -0.15, y: 0.46, z: 0}
---- !u!114 &3680845633363858864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4599745647520422505}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c4eb25fd0cbd7e342b2f9a6fc9663dea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 1
-  move: 1
 --- !u!114 &7257715563703970484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,8 +78,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6de0983f7dffc349b0693f64e36ef39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
-  maxHealth: 2
+  health: 4
+  maxHealth: 4
+--- !u!114 &6598885962869311840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599745647520422505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40f8ba6fcc602154c9beb1a33f7dfd3f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fireball: {fileID: 0}
+  cooldown: 2
+--- !u!195 &-2753789696161076582
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599745647520422505}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.5
+  m_Speed: 2
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 2
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
 --- !u!1 &4780676194787517104
 GameObject:
   m_ObjectHideFlags: 0

@@ -96,7 +96,7 @@ public class SwordSwing : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy") && attack)
+        if ((other.CompareTag("Enemy") || other.name.Contains("Chicken")) && attack)
         {
             Health enemy = other.GetComponent<Health>();
             if (enemy != null)
