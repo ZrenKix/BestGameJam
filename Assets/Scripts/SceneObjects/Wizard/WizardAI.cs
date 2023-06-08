@@ -44,8 +44,6 @@ public class WizardAI : MonoBehaviour
                 // Shoot fireball
                 if (timer > cooldown)
                 {
-                    
-
                     //RaycastHit hit;
                     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 20f, 1))
                     {
