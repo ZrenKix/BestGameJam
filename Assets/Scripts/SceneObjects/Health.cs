@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Reflection;
 
 public class Health : MonoBehaviour
 {
@@ -21,7 +22,7 @@ public class Health : MonoBehaviour
         {
             if (gameObject.GetComponent<LootDrop>() != null) gameObject.GetComponent<LootDrop>().DropLoot();
             if (gameObject.GetComponent<BushLoot>() != null) gameObject.GetComponent<BushLoot>().DropLootBush();
-            if (gameObject.GetComponent<ChickenAI>() != null) GameObject.Find("WorldSpawner").GetComponent<Spawner>().chickenSpawning = true;
+            if (gameObject.GetComponent<ChickenAI>() != null ) gameObject.GetComponent<ChickenAI>().EnableSpawner();
             if (gameObject.GetComponent<Shatter>() != null && gameObject.CompareTag("PickUp")) gameObject.GetComponent<Shatter>().DestructPot();
             if(gameObject.GetComponent<Shatter>() != null && gameObject.CompareTag("Enemy")) gameObject.GetComponent<Shatter>().DestructBush();
 
