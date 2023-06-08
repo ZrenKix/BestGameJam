@@ -113,6 +113,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   crackedPot: {fileID: 1769054304236152920, guid: 6fde7a0a040752945a8a6c269b97b019,
     type: 3}
+  crackedBush: {fileID: 1769054304236152920, guid: 6fde7a0a040752945a8a6c269b97b019,
+    type: 3}
 --- !u!1 &6327101042255955430
 GameObject:
   m_ObjectHideFlags: 0

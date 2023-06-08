@@ -22,13 +22,11 @@ public class LootDrop : MonoBehaviour
         if(gameObject.GetComponentInParent<PlayerControll>() != null)
         {
             uppPlockad = true;
-           
         }
         if (uppPlockad && gameObject.GetComponentInParent<PlayerControll>() == null)
         {
-            audioSource.PlayOneShot(crackSound);
             droppadAvParent = true;
-            
+            audioSource.PlayOneShot(crackSound);
         }
     }
 
