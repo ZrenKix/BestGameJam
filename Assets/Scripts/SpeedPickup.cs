@@ -14,6 +14,13 @@ public class SpeedPickup : MonoBehaviour
     [SerializeField] private AudioClip drink;
     [SerializeField] private AudioSource audioSource;
 
+    PlayerControll playerControll;
+
+    private void Awake()
+    {
+        playerControl = GameObject.FindWithTag("Player").GetComponent<PlayerControll>();
+    }
+
     void Update()
     { if (!hasPickedUp)
         {
@@ -22,7 +29,6 @@ public class SpeedPickup : MonoBehaviour
                 parentObject = transform.parent.gameObject;
                 if (parentObject.tag.Equals("Player"))
                 {
-                    //hej
                     playerControl = parentObject.GetComponent<PlayerControll>();
                     playerControl.sprintSpeed += sprintSpeedIncrease;
                     playerControl.walkSpeed += walkSpeedIncrease;
@@ -30,8 +36,8 @@ public class SpeedPickup : MonoBehaviour
                     audioSource.PlayOneShot(drink);
                     StartCoroutine("RemoveLiquid");
                     StartCoroutine("DropAfterTime");
-                    StartCoroutine("DestroyPotionAfterTime");
-
+                    StartCoroutine("Hidepotion");
+                    StartCoroutine("StopSpeedBoost");
                 }
             }
             catch
@@ -45,18 +51,26 @@ public class SpeedPickup : MonoBehaviour
 
     }
 
-    IEnumerator DestroyPotionAfterTime()
+    IEnumerator StopSpeedBoost()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(6f);
+        playerControl.sprintSpeed = 10;
+        playerControl.walkSpeed = 5;
         Destroy(gameObject);
-        
+    }
+
+    IEnumerator Hidepotion()
+    {
+        yield return new WaitForSeconds(2f);
+        gameObject.GetComponent<Collider>().enabled = false;
+        gameObject.GetComponent<Renderer>().enabled = false;
+
     }
     IEnumerator RemoveLiquid()
     {
         yield return new WaitForSeconds(0.4f);
         liquid.SetActive(false);
         lid.SetActive(false);
-
     }
     IEnumerator DropAfterTime()
     {
