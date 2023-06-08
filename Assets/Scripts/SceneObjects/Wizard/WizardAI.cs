@@ -11,6 +11,7 @@ public class WizardAI : MonoBehaviour
     // Projectile timer
     private float timer = 0;
     public float cooldown = 2;
+    Health playerHealth;
 
     // Stop script if no target boolean
     bool stopScript = false;
@@ -30,6 +31,7 @@ public class WizardAI : MonoBehaviour
             try
             {
                 target = GameObject.FindWithTag("Player").GetComponent<Transform>();
+                playerHealth = GameObject.FindWithTag("Player").GetComponent<Health>();
             }
             catch
             {
@@ -59,5 +61,12 @@ public class WizardAI : MonoBehaviour
     private void ShootFireBall()
     {
         Instantiate(fireball, transform.position + transform.forward + transform.up * 0.5f, transform.rotation);
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("Player"))
+        {
+            playerHealth.takeDamage(1);
+        }
     }
 }
