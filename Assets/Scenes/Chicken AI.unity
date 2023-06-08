@@ -226,6 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9667285}
   - component: {fileID: 9667284}
+  - component: {fileID: 9667286}
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
@@ -264,6 +265,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9667286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9667283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8af8de02e31f8646aa9e42f82fa0164, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  terrain: {fileID: 2239087}
 --- !u!1 &14061216
 GameObject:
   m_ObjectHideFlags: 3
@@ -942,7 +956,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 108102e0f2891e7428e9e6101a8a6716,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.749203
+      value: 12.342
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 108102e0f2891e7428e9e6101a8a6716,
         type: 3}
@@ -2447,7 +2461,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 04659d82d3a4c0840a0a48ad67b9bc28,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.749203
+      value: 12.342
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 04659d82d3a4c0840a0a48ad67b9bc28,
         type: 3}
@@ -11225,7 +11239,7 @@ PrefabInstance:
     - target: {fileID: 676028150557829200, guid: effaaa665bce18747b546d1bc5c10965,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.118
+      value: 0.179
       objectReference: {fileID: 0}
     - target: {fileID: 676028150557829200, guid: effaaa665bce18747b546d1bc5c10965,
         type: 3}
@@ -11391,7 +11405,7 @@ PrefabInstance:
     - target: {fileID: 676028150557829200, guid: effaaa665bce18747b546d1bc5c10965,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.118
+      value: 0.197
       objectReference: {fileID: 0}
     - target: {fileID: 676028150557829200, guid: effaaa665bce18747b546d1bc5c10965,
         type: 3}
