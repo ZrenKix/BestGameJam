@@ -10,7 +10,7 @@ public class Health : MonoBehaviour
     public void takeDamage(int damage)
     {
         health -= damage;
-        if (health < 1)
+        if (health < 0)
         {
             if (gameObject.GetComponent<LootDrop>() != null) gameObject.GetComponent<LootDrop>().DropLoot();
             if (gameObject.GetComponent<BushLoot>() != null) gameObject.GetComponent<BushLoot>().DropLootBush();

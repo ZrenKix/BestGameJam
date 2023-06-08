@@ -23,6 +23,7 @@ public class WizardAI : MonoBehaviour
 
     private void Update()
     {
+        RaycastHit hit;
         // Walk towards player
         if (!stopScript)
         {
@@ -43,12 +44,13 @@ public class WizardAI : MonoBehaviour
                 // Shoot fireball
                 if (timer > cooldown)
                 {
-                    timer = 0;
+                    
 
-                    RaycastHit hit;
+                    //RaycastHit hit;
                     if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, 20f, 1))
                     {
                         ShootFireBall();
+                        timer = 0;
                     }
                 }
                 timer += Time.deltaTime;
