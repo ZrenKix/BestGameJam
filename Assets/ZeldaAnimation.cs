@@ -12,9 +12,13 @@ public class ZeldaAnimation : MonoBehaviour
     private bool isRotating = true;
     private float totalRotationAngle = 0f;
     ZeldaAnimation zeldaAnimation;
+    public bool hasWon;
+
+    private ParticleSystem love;
 
     private void Start()
     {
+        love = GetComponentInChildren<ParticleSystem>();
         zeldaAnimation = GetComponent<ZeldaAnimation>();
         zeldaAnimation.enabled = false;
         initialPosition = transform.position;
@@ -34,7 +38,7 @@ public class ZeldaAnimation : MonoBehaviour
                 {
                     isRotating = false;
                     gameObject.GetComponent<ZeldaAnimation>().enabled = false;
-                    
+                    love.Play();
                 }
             }
 
@@ -53,6 +57,7 @@ public class ZeldaAnimation : MonoBehaviour
 
     private System.Collections.IEnumerator PerformMiniJump()
     {
+       
         isJumping = true;
 
         Vector3 targetPosition = initialPosition + Vector3.up * jumpHeight;
