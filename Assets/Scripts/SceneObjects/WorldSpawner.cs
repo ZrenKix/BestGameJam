@@ -47,7 +47,7 @@ public class WorldSpawner : MonoBehaviour
         float posy = Terrain.activeTerrain.SampleHeight(new Vector3(posx, 0, posz));
         if (posy < posMax && posy > posMin)
         {
-            GameObject newObject = (GameObject)Instantiate(items[i].gameObject, new Vector3(posx, posy, posz), Quaternion.identity);
+            GameObject newObject = (GameObject)Instantiate(items[i].gameObject, new Vector3(posx, 0, posz), Quaternion.identity);
             items[i].currentAmount++;
         }
         else
