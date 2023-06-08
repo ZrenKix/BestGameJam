@@ -32,9 +32,12 @@ public class SwordSwing : MonoBehaviour
             if (currentTime > swingCoolDown)
             {
                 animator.SetLayerWeight(1, 0);
-                animator.SetInteger("SwingNr", 0);
                 swingCount = 0;
+                animator.SetInteger("SwingNr", swingCount);
                 currentTime = 0;
+                animator.SetLayerWeight(1, 0); //Close layer
+                attack = false;
+                Debug.Log("Reset!");
             }
         }
         
@@ -62,8 +65,16 @@ public class SwordSwing : MonoBehaviour
     public void AttackSwing() { // 3 hit combo attack
         attack = true;
         float currentTime = Time.time;
+        
+        if (currentTime - lastSwingTime > swingCoolDown)
+        { //if between currentTime and last attack > AttackWindow -> reset timer
+            lastSwingTime = currentTime;
+            swingCount = 0;
+            animator.SetInteger("SwingNr", swingCount);
+        }
+        
         animator.SetLayerWeight(1,1);
-        swingCount += 1;
+        swingCount++;
         animator.SetInteger("SwingNr",swingCount); //Triggers animation
         //Debug.Log("Swing count " + swingCount);
         switch (swingCount)
@@ -72,25 +83,15 @@ public class SwordSwing : MonoBehaviour
                 animator.Play("SwingOne", 1);
                 audioSource.PlayOneShot(swordSwing);
                 break;
-            case 2:
+            default:
                 animator.Play("SwingTwo", 1);
                 audioSource.PlayOneShot(swordSwing);
-                break;
-            default:
 
                 break;
         }
         Debug.Log("Swing count: " + swingCount);
 
 
-        if (currentTime - lastSwingTime > swingCoolDown) { //if between currentTime and last attack > AttackWindow -> reset timer
-            lastSwingTime = currentTime;
-            swingCount = 0;
-            animator.SetInteger("SwingNr", swingCount);
-            animator.SetLayerWeight(1,0); //Close layer
-            Debug.Log("Reset!");
-            attack = false;
-        }
 
     }
 
