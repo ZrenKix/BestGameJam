@@ -13,8 +13,11 @@ public class ZeldaAnimation : MonoBehaviour
     private float totalRotationAngle = 0f;
     ZeldaAnimation zeldaAnimation;
 
+    private ParticleSystem love;
+
     private void Start()
     {
+        love = GetComponentInChildren<ParticleSystem>();
         zeldaAnimation = GetComponent<ZeldaAnimation>();
         zeldaAnimation.enabled = false;
         initialPosition = transform.position;
@@ -34,7 +37,7 @@ public class ZeldaAnimation : MonoBehaviour
                 {
                     isRotating = false;
                     gameObject.GetComponent<ZeldaAnimation>().enabled = false;
-                    
+                    love.Play();
                 }
             }
 
