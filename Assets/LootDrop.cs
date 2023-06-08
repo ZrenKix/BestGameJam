@@ -31,7 +31,14 @@ public class LootDrop : MonoBehaviour
 
     public void DropLoot()
     {
-        audioSource.PlayOneShot(crackSound);
+        try
+        {
+            audioSource.PlayOneShot(crackSound);
+        } catch
+        {
+
+        }
+        
         weight = Random.Range(1, 100);
         if(weight == 1)
         {

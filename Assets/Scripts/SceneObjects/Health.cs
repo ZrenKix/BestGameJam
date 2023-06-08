@@ -9,9 +9,9 @@ public class Health : MonoBehaviour
 
     WorldSpawner spawner;
 
-    private void Start()
+    private void Awake()
     {
-        spawner = GetComponent<WorldSpawner>();
+        spawner = GameObject.Find("WorldSpawner").GetComponent<WorldSpawner>();
     }
 
     public void takeDamage(int damage)
@@ -22,12 +22,12 @@ public class Health : MonoBehaviour
             if (gameObject.GetComponent<LootDrop>() != null)
             {
                 gameObject.GetComponent<LootDrop>().DropLoot();
-                //spawner.DecreaseAmount(gameObject);
+                spawner.DecreaseAmount(gameObject);
             }
             if (gameObject.GetComponent<BushLoot>() != null)
             {
                 gameObject.GetComponent<BushLoot>().DropLootBush();
-                //spawner.DecreaseAmount(gameObject);
+                spawner.DecreaseAmount(gameObject);
             }
 
             if (gameObject.GetComponent<ChickenAI>() != null) GameObject.FindWithTag("Spawner").GetComponent<Spawner>().chickenSpawning = true;

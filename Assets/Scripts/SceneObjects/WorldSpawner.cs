@@ -58,9 +58,7 @@ public class WorldSpawner : MonoBehaviour
         {
             if (items[i].gameObject.GetType() == type.GetType())
             {
-                Debug.Log(gameObject.GetType() + "Dec");
                 items[i].currentAmount--;
-                Debug.Log(gameObject.GetType() + "After");
                 return;
             }
         }
