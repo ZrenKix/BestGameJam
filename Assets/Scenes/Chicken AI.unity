@@ -286,6 +286,10 @@ MonoBehaviour:
       type: 3}
     maxAmount: 100
     currentAmount: 0
+  - gameObject: {fileID: 4599745647520422505, guid: 0d1ac3c0fa4767d4b8034eb320ecdd2c,
+      type: 3}
+    maxAmount: 30
+    currentAmount: 0
   terrain: {fileID: 2239087}
   posMin: 10
   posMax: 50
@@ -13020,7 +13024,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1738502126}
-  m_LocalRotation: {x: 0.0835918, y: 0.6762188, z: -0.07766626, w: 0.7278108}
+  m_LocalRotation: {x: 0.083591804, y: 0.67621875, z: -0.077666245, w: 0.72781086}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0

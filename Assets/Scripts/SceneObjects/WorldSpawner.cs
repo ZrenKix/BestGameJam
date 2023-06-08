@@ -29,7 +29,7 @@ public class WorldSpawner : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
-            if (items[i].currentAmount <= items[i].maxAmount)
+            if (items[i].currentAmount < items[i].maxAmount)
             {
                 PlaceObject(i);
             }
@@ -47,7 +47,7 @@ public class WorldSpawner : MonoBehaviour
         float posy = Terrain.activeTerrain.SampleHeight(new Vector3(posx, 0, posz));
         if (posy < posMax && posy > posMin)
         {
-            GameObject newObject = (GameObject)Instantiate(items[i].gameObject, new Vector3(posx, 0, posz), Quaternion.identity);
+            GameObject newObject = (GameObject)Instantiate(items[i].gameObject, new Vector3(posx, 0.2f, posz), Quaternion.identity);
             items[i].currentAmount++;
         }
         else
