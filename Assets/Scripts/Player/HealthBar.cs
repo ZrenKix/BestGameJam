@@ -3,11 +3,26 @@ using UnityEngine;
 public class HealthBar : MonoBehaviour
 {
     [SerializeField] private GameObject[] hearts;
+    [SerializeField] private AudioClip ouch;
+    [SerializeField] private AudioSource audioSource;
 
     public Health health;
-
+    public int oldHealth = 2;
+    
+    
     private void Update()
     {
+        if (oldHealth > health.getCurrentHealth())
+        {
+            audioSource.PlayOneShot(ouch);
+            oldHealth = health.getCurrentHealth();
+            
+
+        }
+        else if (health.getCurrentHealth() < oldHealth)
+        {
+            oldHealth = health.getCurrentHealth();
+        }
         if (health.getCurrentHealth() == 0)
         {
             hearts[0].SetActive(true);

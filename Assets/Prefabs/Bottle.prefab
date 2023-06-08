@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4070761760770031998}
   - component: {fileID: 1345558944317614132}
-  - component: {fileID: 1345558944317614133}
   - component: {fileID: 1345558944317614135}
+  - component: {fileID: 4473650125521133165}
   m_Layer: 7
   m_Name: Bottle
   m_TagString: PickUp
@@ -53,19 +53,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &1345558944317614133
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3690014814886779844}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1345558944317614135
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -82,6 +69,21 @@ MonoBehaviour:
   sprintSpeedIncrease: 2
   liquid: {fileID: 3690014814535301323}
   lid: {fileID: 3690014814646732336}
+  drink: {fileID: 0}
+  audioSource: {fileID: 0}
+--- !u!65 &4473650125521133165
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690014814886779844}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1164445, y: 1.9186163, z: 1.2372024}
+  m_Center: {x: 0.24798355, y: 0.9509635, z: 0.20916918}
 --- !u!1 &5672383838721024797
 GameObject:
   m_ObjectHideFlags: 0
