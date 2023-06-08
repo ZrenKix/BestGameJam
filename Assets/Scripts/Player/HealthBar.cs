@@ -37,7 +37,7 @@ public class HealthBar : MonoBehaviour
             hearts[2].SetActive(true);
         }
 
-        if(!takeDamage && savedHealth != health.getCurrentHealth()) {
+        if(!takeDamage && savedHealth > health.getCurrentHealth()) {
             takeDamage = true;
             PlayBloodSplatter();
         }
