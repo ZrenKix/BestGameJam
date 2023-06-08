@@ -10,9 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3791543696750198995}
   - component: {fileID: 3680845633363858866}
-  - component: {fileID: 3680845633363858867}
   - component: {fileID: 3680845633363858864}
   - component: {fileID: 7257715563703970484}
+  - component: {fileID: 4595219903303355485}
+  - component: {fileID: 2018882905212074703}
   m_Layer: 7
   m_Name: Chicken
   m_TagString: PickUp
@@ -52,19 +53,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!135 &3680845633363858867
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4599745647520422505}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: -0.15, y: 0.46, z: 0}
 --- !u!114 &3680845633363858864
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -93,6 +81,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   maxHealth: 2
+--- !u!135 &4595219903303355485
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599745647520422505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.39571166
+  m_Center: {x: -0.14893901, y: 0.36, z: 0}
+--- !u!135 &2018882905212074703
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599745647520422505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.43
+  m_Center: {x: -0.14893901, y: 0.77, z: 0}
 --- !u!1 &4780676194787517104
 GameObject:
   m_ObjectHideFlags: 0

@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 3791543696750198995}
   - component: {fileID: 3680845633363858866}
-  - component: {fileID: 3680845633363858867}
   - component: {fileID: 7257715563703970484}
   - component: {fileID: 6598885962869311840}
   - component: {fileID: -2753789696161076582}
   - component: {fileID: 185479567318841303}
+  - component: {fileID: 8829051924898989934}
+  - component: {fileID: 9056950845021392745}
   m_Layer: 0
   m_Name: AngryChick
   m_TagString: Enemy
@@ -55,19 +56,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!135 &3680845633363858867
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4599745647520422505}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: -0.15, y: 0.46, z: 0}
 --- !u!114 &7257715563703970484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,7 +99,7 @@ NavMeshAgent:
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
-  m_StoppingDistance: 0
+  m_StoppingDistance: 1
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
   m_AutoRepath: 1
@@ -131,6 +119,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59bcba12ff0119e40818c1ff2e39bf18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!135 &8829051924898989934
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599745647520422505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.39571166
+  m_Center: {x: -0.14893901, y: 0.36, z: 0}
+--- !u!135 &9056950845021392745
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599745647520422505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.43
+  m_Center: {x: -0.14893901, y: 0.77, z: 0}
 --- !u!1 &4780676194787517104
 GameObject:
   m_ObjectHideFlags: 0
