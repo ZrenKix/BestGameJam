@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Spawner : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class Spawner : MonoBehaviour
             {
                 Vector3 spawningPosition = link.position + new Vector3(Random.Range(-10, 10), 10f, Random.Range(-10, 10));
                 GameObject chicken = Instantiate(enemyChicken, spawningPosition, new Quaternion(0f, 0f, 0f, 0f));
-                
+                chicken.GetComponent<NavMeshAgent>().enabled = false;
             }
 
             timeElapsed = 0f;

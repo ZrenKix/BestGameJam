@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7257715563703970484}
   - component: {fileID: 6598885962869311840}
   - component: {fileID: -2753789696161076582}
+  - component: {fileID: 185479567318841303}
   m_Layer: 0
   m_Name: AngryChick
   m_TagString: Enemy
@@ -118,6 +119,18 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &185479567318841303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599745647520422505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59bcba12ff0119e40818c1ff2e39bf18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4780676194787517104
 GameObject:
   m_ObjectHideFlags: 0
