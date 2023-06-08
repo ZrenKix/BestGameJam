@@ -3,6 +3,8 @@ using UnityEngine;
 public class SwordSwing : MonoBehaviour
 {
     public GameObject link;
+    [SerializeField] private AudioClip swordSwing;
+    private AudioSource audioSource;
     private Animator animator;
     private bool attack = false;
     private float swingCoolDown = 1f;
@@ -19,6 +21,9 @@ public class SwordSwing : MonoBehaviour
         lastSwingTime = swingCoolDown; //Turned to positive for first swing
         
         rightArm = transform.parent.parent;
+
+        audioSource = GetComponent<AudioSource>();
+
     }
 
     private void Update() {  
@@ -65,9 +70,11 @@ public class SwordSwing : MonoBehaviour
         {   
             case 1:
                 animator.Play("SwingOne", 1);
+                audioSource.PlayOneShot(swordSwing);
                 break;
             case 2:
                 animator.Play("SwingTwo", 1);
+                audioSource.PlayOneShot(swordSwing);
                 break;
             default:
 
@@ -82,7 +89,7 @@ public class SwordSwing : MonoBehaviour
             animator.SetInteger("SwingNr", swingCount);
             animator.SetLayerWeight(1,0); //Close layer
             Debug.Log("Reset!");
-            //attack = false;
+            attack = false;
         }
 
     }
