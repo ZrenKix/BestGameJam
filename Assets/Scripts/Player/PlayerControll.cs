@@ -218,23 +218,27 @@ public class PlayerControll : MonoBehaviour
 
     public void DropObject()
     {
-        int playerLayer = LayerMask.NameToLayer("Player");
-        int carriedObjectLayer = LayerMask.NameToLayer("CarriedObject");
-        Physics.IgnoreLayerCollision(playerLayer, carriedObjectLayer, false);
+        if (carriedObject !=null)
+        {
+            int playerLayer = LayerMask.NameToLayer("Player");
+            int carriedObjectLayer = LayerMask.NameToLayer("CarriedObject");
+            Physics.IgnoreLayerCollision(playerLayer, carriedObjectLayer, false);
+
+            carriedObject.transform.SetParent(null);
+            carriedObject.GetComponent<Rigidbody>().isKinematic = false;
+            carriedObject.layer = defaultLayer;
+            carriedObject.layer = defaultLayer;
+
+            Rigidbody carriedObjectRb = carriedObject.GetComponent<Rigidbody>();
+
+            Vector3 throwDirection = transform.forward + Vector3.up;
+
+            carriedObjectRb.velocity = throwDirection * throwForce;
+            carriedObjectRb.angularVelocity = new Vector3(0f, 2f, 0f);
+            carriedObject = null;
+            isCarrying = false;
+        }
         
-        carriedObject.transform.SetParent(null);
-        carriedObject.GetComponent<Rigidbody>().isKinematic = false;
-        carriedObject.layer = defaultLayer;
-        carriedObject.layer = defaultLayer;
-
-        Rigidbody carriedObjectRb = carriedObject.GetComponent<Rigidbody>();
-
-        Vector3 throwDirection = transform.forward + Vector3.up; 
-
-        carriedObjectRb.velocity = throwDirection * throwForce;
-        carriedObjectRb.angularVelocity = new Vector3(0f, 2f, 0f); 
-        carriedObject = null;
-        isCarrying = false;
         animator.SetBool("Grabbing", false);
     }
 

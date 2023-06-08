@@ -26,12 +26,19 @@ public class LootDrop : MonoBehaviour
         if (uppPlockad && gameObject.GetComponentInParent<PlayerControll>() == null)
         {
             droppadAvParent = true;
-            audioSource.PlayOneShot(crackSound);
         }
     }
 
     public void DropLoot()
     {
+        try
+        {
+            audioSource.PlayOneShot(crackSound);
+        } catch
+        {
+
+        }
+        
         weight = Random.Range(1, 100);
         if(weight == 1)
         {
@@ -53,7 +60,6 @@ public class LootDrop : MonoBehaviour
         if (droppadAvParent)
         {
             gameObject.GetComponent<Health>().takeDamage(1);
-  
         }
     }
 

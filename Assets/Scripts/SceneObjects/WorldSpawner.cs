@@ -33,14 +33,10 @@ public class WorldSpawner : MonoBehaviour
             {
                 PlaceObject(i);
             }
-            else
-            {
-                Debug.Log("Generate objects complete!");
-            }
         }
     }
 
-    void PlaceObject(int i)
+    private void PlaceObject(int i)
     {
         int posx = Random.Range(terrainPosX, terrainPosX + terrainWidth);
         int posz = Random.Range(terrainPosZ, terrainPosZ + terrainLength);
@@ -53,6 +49,18 @@ public class WorldSpawner : MonoBehaviour
         else
         {
             PlaceObject(i);
+        }
+    }
+
+    public void DecreaseAmount (GameObject type)
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i].gameObject.GetType() == type.GetType())
+            {
+                items[i].currentAmount--;
+                return;
+            }
         }
     }
 }

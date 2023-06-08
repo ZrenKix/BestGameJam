@@ -8,10 +8,14 @@ public class HeartPickup : MonoBehaviour
 
     void Update()
     {
-      GameObject parentObject = transform.parent.gameObject;
-        if (parentObject.tag.Equals("Player")) {
-          parentObject.GetComponent<Health>().increaseHealth(healthValue);
-            Destroy(gameObject);
+        if (transform.parent != null)
+        {
+            GameObject parentObject = transform.parent.gameObject;
+            if (parentObject.tag.Equals("Player"))
+            {
+                parentObject.GetComponent<Health>().increaseHealth(healthValue);
+                Destroy(gameObject);
+            }
         }
     }
 }
