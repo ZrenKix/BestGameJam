@@ -28,7 +28,7 @@ public class Fireball : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Hit!");
+       
         if (collision != null && collision.gameObject.GetComponent<Health>() != null)
         {
             collision.gameObject.GetComponent<Health>().takeDamage(1);
