@@ -144,6 +144,11 @@ public class PlayerControll : MonoBehaviour
 
     void AttackSword()
     {
+        if (isCarrying)
+        {
+            return;
+        }
+
         if(swordSwing != null)
         {
             swordSwing.AttackSwing();
