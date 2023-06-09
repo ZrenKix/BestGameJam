@@ -9,6 +9,7 @@ public class KeyScript : MonoBehaviour
     private ZeldaAnimation zeldaAnimation;
     //private GameObject link;
     [SerializeField] private BgMusicScript bgMusic;
+    private UITimer timer;
    
 
     private void Start()
@@ -18,6 +19,7 @@ public class KeyScript : MonoBehaviour
         vakter = GameObject.Find("Vakter");
        // link = GameObject.Find("Link");
         zeldaAnimation = GameObject.Find("Zelda").GetComponent<ZeldaAnimation>();
+        timer = GameObject.Find("Timer").GetComponent<UITimer>();
 
     }
 
@@ -28,6 +30,8 @@ public class KeyScript : MonoBehaviour
             cageDoor.SetActive(false);
             zeldaAnimation.enabled = true;
             bgMusic.playWinMusic();
+            timer.StopTimer();
+
         }
     }
 
