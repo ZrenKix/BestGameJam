@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4070761760770031998}
   - component: {fileID: 1345558944317614132}
-  - component: {fileID: 1345558944317614135}
   - component: {fileID: 4473650125521133165}
   - component: {fileID: 8302349096701856608}
+  - component: {fileID: 6866868604739306660}
   m_Layer: 7
   m_Name: Bottle
   m_TagString: PickUp
@@ -54,24 +54,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1345558944317614135
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3690014814886779844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9837f51e2155700459170e4334b2b61e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkSpeedIncrease: 5
-  sprintSpeedIncrease: 2
-  liquid: {fileID: 3690014814535301323}
-  lid: {fileID: 3690014814646732336}
-  drink: {fileID: 0}
-  audioSource: {fileID: 0}
 --- !u!65 &4473650125521133165
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -98,6 +80,24 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 1.65
   m_Center: {x: 0.25, y: 0.93, z: 0.18}
+--- !u!114 &6866868604739306660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3690014814886779844}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9837f51e2155700459170e4334b2b61e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  walkSpeedIncrease: 5
+  sprintSpeedIncrease: 2
+  liquid: {fileID: 3690014814535301323}
+  lid: {fileID: 3690014814646732336}
+  drink: {fileID: 0}
+  audioSource: {fileID: 0}
 --- !u!1 &5672383838721024797
 GameObject:
   m_ObjectHideFlags: 0

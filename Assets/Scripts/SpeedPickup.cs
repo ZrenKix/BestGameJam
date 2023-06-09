@@ -63,8 +63,6 @@ public class SpeedPickup : MonoBehaviour
     {
         yield return new WaitForSeconds(2f);
         gameObject.GetComponent<Collider>().enabled = false;
-        gameObject.GetComponent<Renderer>().enabled = false;
-
     }
     IEnumerator RemoveLiquid()
     {
