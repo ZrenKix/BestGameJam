@@ -40,11 +40,11 @@ public class LootDrop : MonoBehaviour
         }
         
         weight = Random.Range(1, 100);
-        if(weight == 1)
+        if(weight < 10)
         {
             Instantiate(prefabs[0], transform.position, new Quaternion(0f, 0f, 0f, 0f));
         }
-        else if(weight <= 50)
+        else if(weight > 10 && weight < 55)
         {
             Instantiate(prefabs[1], transform.position, new Quaternion(0f, 0f, 0f, 0f));
         }
